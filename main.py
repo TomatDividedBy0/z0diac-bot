@@ -200,5 +200,5 @@ async def specs():
     await client.say('**CPU:** Opteron 1389\n**GPU:** Radeon R7 360\n**HDD:** 1TB HDD\n**RAM:** 8GB DDR3')
 
 
-client.run('MzgzMzg1MTk4NTM0MDY2MTg3.DUwMaQ.wj3irl5hL_d1Nt_D2ZfWX6j5xYE')
+client.run('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
 
