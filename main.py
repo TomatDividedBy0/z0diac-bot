@@ -193,14 +193,27 @@ async def role(ctx):
         await client.say("That is not a role, refer to #welcome for a list of roles.")
 
 
-@client.event
-async def on_member_join(user):
-    await client.send_message(client.get_channel('381184797495787530'), str(user.mention + " , please register your role with our bot using `!role [your role]`. Check #welcome for a list of roles. For a custom subrole do "))
-
-
 @client.command(name='subrole', pass_context=True)
 async def subrole(ctx):
-    print("Subrole")
+    print(ctx.message.content[9:])
+    await client.create_role(ctx.message.author.server, name = ctx.message.content[9:])
+    roleo = discord.utils.get(ctx.message.server.roles, name=ctx.message.content[9:])
+    await client.add_roles(ctx.message.author,roleo)
+    await client.say("Your subrole has been added.")
+
+
+@client.command(name='pronoun', pass_context=True)
+async def pronoun(ctx):
+    print(ctx.message.content[9:])
+    await client.create_role(ctx.message.author.server, name=ctx.message.content[9:])
+    roleo = discord.utils.get(ctx.message.server.roles, name=ctx.message.content[9:])
+    await client.add_roles(ctx.message.author,roleo)
+    await client.say("Your pronoun has been added.")
+
+
+@client.event
+async def on_member_join(user):
+    await client.send_message(client.get_channel('381184797495787530'), str(user.mention + " , please register your role with our bot using `!role [your role]`. Check #welcome for a list of roles."))
 
 
 @client.command(name='repregister_everyone',pass_context=True)
@@ -222,5 +235,5 @@ async def specs():
     await client.say('**CPU:** Opteron 1389\n**GPU:** Radeon R7 360\n**HDD:** 1TB HDD\n**RAM:** 8GB DDR3')
 
 
-client.run('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
+client.run('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
 
