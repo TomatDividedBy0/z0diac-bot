@@ -181,6 +181,28 @@ async def repdown(ctx):
                 json.dump(whoreppedwho_calibrate, f)
 
 
+@client.command(name='role', pass_context=True)
+async def role(ctx):
+    role_list = ["Classical Liberal", "Blue Dog", "Social Democrat", "Left Libertarian", "Neoconservative", "Neoliberal", "Socialist", "Paleoconservative", "Nationalist" , "Evangelical" , "Right Libertarian" , "Centrist"]
+    print(ctx.message.content[6:])
+    if ctx.message.content[6:] in role_list:
+        roleo = discord.utils.get(ctx.message.server.roles, name=ctx.message.content[6:])
+        await client.add_roles(ctx.message.author,roleo)
+        await client.say("You are now added as a " + ctx.message.content[6:] + "!")
+    else:
+        await client.say("That is not a role, refer to #welcome for a list of roles.")
+
+
+@client.event
+async def on_member_join(user):
+    await client.send_message(client.get_channel('381184797495787530'), str(user.mention + " , please register your role with our bot using `!role [your role]`. Check #welcome for a list of roles. For a custom subrole do "))
+
+
+@client.command(name='subrole', pass_context=True)
+async def subrole(ctx):
+    print("Subrole")
+
+
 @client.command(name='repregister_everyone',pass_context=True)
 async def repregister_everyone(ctx):
     rep_dict0 = client.get_server('381170494814289922')
@@ -200,5 +222,5 @@ async def specs():
     await client.say('**CPU:** Opteron 1389\n**GPU:** Radeon R7 360\n**HDD:** 1TB HDD\n**RAM:** 8GB DDR3')
 
 
-client.run('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
+client.run('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
 
