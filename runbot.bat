@@ -1,4 +1,3 @@
-@ECHO off
-
-py.exe -3.5 main.py
-PAUSE
+@echo off
+start py.exe -3.5 main.py
+start C:\Users\fuzzy\PycharmProjects\noboty\z0diac-bot\MusicBot\runbot.bat
