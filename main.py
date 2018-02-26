@@ -212,6 +212,15 @@ async def pronoun(ctx):
 
 
 @client.event
+async def on_message(message):
+    if message.author is message.server.get_member('173451290268008448'):
+        print('Success')
+        await client.add_reaction(message,'⭐')
+    else:
+        print('Failed')
+
+
+@client.event
 async def on_member_join(user):
     await client.send_message(client.get_channel('381184797495787530'), str(user.mention + " , please register your role with our bot using `!role [your role]`. Check #welcome for a list of roles."))
 
@@ -235,5 +244,5 @@ async def specs():
     await client.say('**CPU:** Opteron 1389\n**GPU:** Radeon R7 360\n**HDD:** 1TB HDD\n**RAM:** 8GB DDR3')
 
 
-client.run('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
+client.run('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
 
