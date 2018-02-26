@@ -3,6 +3,7 @@ from discord.ext import commands
 import platform
 import json
 import os
+from time import gmtime, strftime
 
 with open('whoreppedwho.json','r') as f:
     f.close()
@@ -229,6 +230,13 @@ async def repregister_everyone(ctx):
     with open('dictionary.json', 'w') as f:
         json.dump(rep_dict, f)
 
+
+@client.event
+async def on_message(message):
+    if message.content.startswith('$test'):
+        a=message.timestamp
+        await client.send_message(message.channel, a)
+    
 
 @client.command(name='specs')
 async def specs():
