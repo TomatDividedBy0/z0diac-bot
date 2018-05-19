@@ -54,7 +54,8 @@ async def whatis(ctx):
     else:
         await ctx.channel.send(label + " is not a role.")
 
-        
+from PyDictionary import PyDictionary
+dictionary=PyDictionary()
 @z0diac.command()
 async def define(ctx):
     word = ctx.message.content[7:]
