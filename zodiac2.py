@@ -1,5 +1,11 @@
 import discord
 from discord.ext import commands
+import time
+import itertools
+import json
+import traceback
+
+
 
 z0diac = commands.Bot(command_prefix= '/', description='A bot for the Political Watering Hole.')
 
@@ -80,5 +86,133 @@ async def rolequiz(ctx):
         await ctx.message.author.send("Welcome to the official compact edition of the PWH political test. \nYou will be asked various questions on your values to determine your ideology. Simply send a thumbs up emoji to begin.")
     else:
         print("Fail")
-z0diac.run("MzgzMzg1MTk4NTM0MDY2MTg3.DdOKNg.k92hJ_rHCjllSa_ehn81b2s9uNk")
 
+
+@z0diac.command()
+async def renamefuco(ctx):
+    await ctx.channel.send('Thank you for participating in the free shop beta! You can now use your effort points to use this command. Simply do `/buy renamefuco [NAME]` to use the command!')
+
+
+#@z0diac.event
+#async def on_message(message):
+ #   if message.channel == message.guild.get_channel(432574353822056448):
+  #      if '<:' in message.content:
+   #        await message.delete()
+    #    elif '😂' in message.content or '🖕' in message.content or '🤔'in message.content:
+    #        await message.delete()
+
+
+@z0diac.command()
+async def archive(ctx):
+    channel_ids = (384011944018837524, 432574353822056448, 381170494814289925)
+    for x in itertools.chain.from_iterable(z0diac.get_channel(snowflake).pins() for snowflake in channel_ids):
+            async with ctx.typing():
+                pins = await x
+                embed = discord.Embed(title=x.author.nick, description=pins.content, thumbnail=pins.author.avatar)
+                await ctx.channel.send(embed=embed)
+
+
+#@z0diac.command()
+#async def epregistereveryone(ctx):
+ #       rep_dict = [{x.id: 0} for x in ctx.guild.members]
+  #      print(rep_dict)
+   #     with open('dictionary.json') as f:
+    #        key = json.load(f)
+     #   with open('dictionary.json', 'w') as f:
+      #      json.dump(rep_dict, f)
+
+
+@z0diac.command()
+async def specs(ctx):
+    await ctx.channel.send('**CPU:** Opteron 3365\n**GPU:** Radeon R7 360\n**HDD:** 320GB HDD\n**RAM:** 8GB DDR3\n**OS:** Kubuntu')
+
+
+#@z0diac.event
+#async def on_member_join(user):
+ #   rep_dict = {user.id: 0}
+  #  with open('dictionary.json') as f:
+   #     key = json.load(f)
+    #key.update(rep_dict)
+    #with open('dictionary.json', 'w') as f:
+     #   json.dump(key, f)
+      #  print('Successfully registered.')
+
+
+@z0diac.command()
+async def balance(ctx):
+    with open("dictionary.json", 'r') as f:
+        repkey = json.load(f)
+        await ctx.send(str(ctx.message.author.name) + " has " + str(repkey.get(str(ctx.message.author.id))) + ' Effort Points.')
+
+
+@z0diac.command()
+async def give(ctx):
+    try:
+        with open("dictionary.json", 'r+') as f:
+            repkey = json.load(f)
+            currentvalue_recipient = repkey.get(str(ctx.message.raw_mentions[0]))
+            currentvalue_giver = repkey.get(str(ctx.message.author.id))
+            dollar_amount = ctx.message.content.find('>') + 1
+            if currentvalue_giver - int(ctx.message.content[dollar_amount:]) >= 0:
+                repkey[str(ctx.message.author.id)] = (currentvalue_giver - int(ctx.message.content[dollar_amount:]))
+                f.seek(0)
+                json.dump(repkey, f)
+                f.truncate()
+                with open("dictionary.json", 'r+') as file:
+                    repkey2 = json.load(file)
+                    repkey2[str(ctx.message.raw_mentions[0])] = (currentvalue_recipient + int(ctx.message.content[dollar_amount:]))
+                    file.seek(0)
+                    json.dump(repkey2, file)
+                    file.truncate()
+                payment = ctx.message.content[(ctx.message.content.find('>') + 1):]
+                await ctx.channel.send('You have successfully gifted ' + (str(ctx.message.mentions[0]))[:-5] + payment + ' Effort Points.' )
+            else:
+                print('You cannot afford that item!')
+    except IndexError or ValueError:
+        await ctx.channel.send('Something went wrong, remember to format your message as: /give [mentioned person] [number].')
+        traceback.print_exc()
+
+@z0diac.command()
+async def buy(ctx):
+    with open("dictionary.json", 'r+') as f:
+        repkey = json.load(f)
+        currentvalue_customer = repkey.get(str(ctx.message.author.id))
+        if ctx.message.content[5:] == 'bigdab' or ctx.message.content[:5] == 'dab':
+            if ctx.channel != z0diac.get_channel(432574353822056448):
+                dollar_amount = 5
+                if currentvalue_customer - dollar_amount >= 0:
+                    repkey[str(ctx.message.author.id)] = currentvalue_customer - dollar_amount
+                    f.seek(0)
+                    json.dump(repkey, f)
+                    f.truncate()
+                    with open('bigdab.png','rb') as image:
+                        await ctx.channel.send(file=image2)
+                else:
+                    await ctx.channel.send('You need 5 EP to do that!')
+            else:
+                await ctx.channel.send("You can't dab here!")
+        elif ctx.message.content[5:15] == 'renamefuco':
+            if ctx.message.author != discord.utils.get(ctx.guild.members, id=346821778829475861):
+                fuco = ctx.guild.get_member(346821778829475861)
+                beforefuco = fuco.display_name
+                if ctx.channel != z0diac.get_channel(432574353822056448):
+                    dollar_amount = 5
+                    if currentvalue_customer - dollar_amount >= 0:
+                        repkey[str(ctx.message.author.id)] = currentvalue_customer - dollar_amount
+                        f.seek(0)
+                        json.dump(repkey, f)
+                        f.truncate()
+                    try:
+                        await fuco.edit(nick=ctx.message.content[16:])
+                        await ctx.channel.trigger_typing()
+                        time.sleep(3)
+                        afterfuco = fuco.display_name
+                        await ctx.channel.send(beforefuco + ', more like ' + afterfuco + '!')
+                    except discord.ext.commands.errors.CommandInvokeError:
+                        await ctx.channel.send("Too long.")
+            else:
+                await ctx.channel.send("Nice try, FuCo.")
+        else:
+            await ctx.channel.send('Sorry, I did not get that.')
+
+z0diac.run("MzgzMzg1MTk4NTM0MDY2MTg3.DdOKNg.k92hJ_rHCjllSa_ehn81b2s9uNk")
