@@ -59,14 +59,11 @@ async def whatis(ctx):
     elif label == "Theologue" or label == "theologue":
         await ctx.channel.send("Theologues are socially conservative, but vary widely on their economic policies. This includes Distributists, Christian Democrats, and right-theologues. Their main deciding factor in voting is their religion.")
     else:
-        await ctx.channel.send(label + " is not a role.")
+        word = ctx.message.content[7:]
+        meaningobject = dictionary.meaning(word)
+        definition = next(iter(meaningobject.values()))[0]
+        await ctx.channel.send(ctx.message.content[7:] + " means " + definition)
 
-@z0diac.command()
-async def define(ctx):
-    word = ctx.message.content[7:]
-    meaningobject = dictionary.meaning(word)
-    definition = next(iter(meaningobject.values()))[0]
-    await ctx.channel.send(ctx.message.content[7:] + "means " + definition)
 @z0diac.command()
 async def rolequiz(ctx):
     await ctx.message.author.send("Welcome to the official compact edition of the PWH political test. \nYou will be asked various questions on your values to determine your ideology. Simply say ready when you are ready to start.")
