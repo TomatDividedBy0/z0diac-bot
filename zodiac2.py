@@ -1,16 +1,12 @@
 import discord
 from discord.ext import commands
-<<<<<<< HEAD
 import time
 import itertools
 import json
 import traceback
-
-
-=======
 from PyDictionary import PyDictionary
 dictionary=PyDictionary()
->>>>>>> bd3ac67f36e74e9742e0eb57ef31f054720d5b4d
+
 
 z0diac = commands.Bot(command_prefix= '/', description='A bot for the Political Watering Hole.')
 
