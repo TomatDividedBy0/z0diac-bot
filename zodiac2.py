@@ -8,7 +8,7 @@ from PyDictionary import PyDictionary
 import subprocess
 
 dictionary=PyDictionary()
-subprocess.run(['node', 'C:/Users/fuzzy/PycharmProjects/revbot/bot.js'])
+
 
 z0diac = commands.Bot(command_prefix= '/', description='A bot for the Political Watering Hole.')
 
@@ -17,6 +17,8 @@ z0diac = commands.Bot(command_prefix= '/', description='A bot for the Political 
 async def on_ready():
     print('Connected to '+str(len(set(z0diac.get_all_members())))+' users')
     print('--------')
+    status = discord.Game("with your tax dollars.")
+    await z0diac.change_presence(activity=status)
 
 
 # Adding Voting To Messages
@@ -71,19 +73,25 @@ async def whatis(ctx):
                 await ctx.send(str(ctx.message.author.name) + " has " + str(repkey.get(str(ctx.message.author.id))) + ' Effort Points.')
         elif label == "myideology" or label == "my ideology" or label == "myIdeology":
             await ctx.message.delete()
-            await ctx.message.author.send("Welcome to the official compact edition of the PWH political test. \nYou will be asked various questions on your values to determine your ideology. Simply say ready when you are ready to start.")
-            def check(message):
-                return message.author == ctx.message.author and message.channel == ctx.message.author.DMChannel and message.content == 'ready'
-            message = await z0diac.wait_for('message', check=check)
-            print(str(message.author.id) + ': This is message.author')
-            print(str(message.channel.id) + ': This is message.channel')
-            print(str(message.author.id) + ': This is message.content')
-            print(str(ctx.message.author.id) + ': This is ctx.message.author')
-            print(str(ctx.message.author.DMChannel) + ': This is message.author')
-            if message.author == ctx.message.author and message.channel == ctx.message.author.DMChannel and message.content == 'ready':
-                await ctx.message.author.send("Welcome to the official compact edition of the PWH political test. \nYou will be asked various questions on your values to determine your ideology. Simply send a thumbs up emoji to begin.")
-            else:
-                print("Fail")
+            message_to = await ctx.message.author.send("Welcome to the official compact edition of the PWH political test. \nYou will be asked various questions on your values to determine your ideology. You will be presented with multiple choices ranging from A to E. Simply click the corresponding button to answer said question. To begin, click the green check mark.")
+            await message_to.add_reaction('✅')
+            def check(reaction, user):
+                return reaction.count == 2
+            await z0diac.wait_for('reaction_add',check=check)
+            message_3 = await ctx.message.author.send("**Question 1:**\nDo you support the existence of a government? (Y for yes, and N for no.)")
+            await message_3.add_reaction('🇾')
+            await message_3.add_reaction('🇳')
+            def check(reaction, user):
+                return reaction.count == 2
+            reaction2 = await z0diac.wait_for('reaction_add', check=check)
+            if reaction2[0].emoji == '🇾':
+                message = await ctx.message.author.send("**Question 2:**\nDo you believe said government should be in charge of the market? (Y for yes, and N for no.)")
+                await message.add_reaction('🇾')
+                await message.add_reaction('🇳')
+            if reaction2[0].emoji == '🇳':
+                message = await ctx.message.author.send("**Question 2:**\nDo you believe in abolishing the concept of owning private property? (Y for yes, and N for no.)")
+                await message.add_reaction('🇾')
+                await message.add_reaction('🇳')
         elif label == "bigdab" or label == "bigDab" or label == "big dab":
             await ctx.channel.send("bigdab is a shop item that allows you to post a full-sized dab instead of a tiny emote. This item costs you 10 EP.")
         elif label == "renamefuco" or label == "renameFuCo" or label == "rename FuCo":
@@ -105,6 +113,16 @@ async def whatis(ctx):
     else:
         await ctx.message.delete()
         await ctx.message.author.send("You cannot do that in this channel.")
+
+
+@z0diac.event
+async def on_raw_reaction_add(reaction, message, channel, reacter):
+    if str(reaction) == '📌':
+        x = await discord.utils.get(discord.utils.get(z0diac.get_all_channels(), id=channel).get_message(all), id=message)
+        embed = discord.Embed(title=x.author.nick, description=x.content, thumbnail=x.author.avatar)
+        await z0diac.get_channel(446400765775314947).send(embed=embed)
+    else:
+        print('Fail')
 
 @z0diac.command()
 async def renamefuco(ctx):
@@ -228,37 +246,9 @@ async def buy(ctx):
                     f.seek(0)
                     json.dump(repkey, f)
                     f.truncate()
-                    role_name = await ctx.guild.create_role(name=ctx.message.content[12:],mentionable=True)
-                    await ctx.message.author.add_roles(role_name)
-                    await ctx.channel.send('You have been given the' + ctx.message.content[12:] + ' role.')
-                else:
-                    await ctx.channel.send('You need ' + str(dollar_amount) + ' EP to do that!')
-            elif ctx.message.content[5:7] == 'ad':
-                dollar_amount = 75
-                if currentvalue_customer - dollar_amount >= 0:
-                    repkey[str(ctx.message.author.id)] = currentvalue_customer - dollar_amount
-                    f.seek(0)
-                    json.dump(repkey, f)
-                    f.truncate()
-                    await z0diac.get_channel(447424864907689984).send("**By** **" + ctx.message.author.name + ":** " + ctx.message.content[8:])
-                else:
-                    await ctx.channel.send('You need 200 EP to do that!')
-            elif ctx.message.content[5:] == 'membership':
-                dollar_amount = 300
-                if currentvalue_customer - dollar_amount >= 0:
-                    await ctx.message.author.add_roles(discord.utils.get(ctx.guild.roles,id=447429561366478849))
-                    await ctx.channel.send('You now have access to lounge!')
-                else:
-                    await ctx.channel.send('You need 300 EP to do that!')
-            else:
-                await ctx.channel.send('Sorry, I did not get that.')
-        else:
-            await ctx.message.delete()
-            await ctx.message.author.send("You cannot do that in this channel.")
-
 @z0diac.command()
 async def apolitical(ctx):
     await ctx.message.author.add_roles(discord.utils.get(ctx.guild.roles, id=409483695582478348))
     await ctx.channel.send('You are no longer in open-debate and now have access to lounge!')
 
-z0diac.run("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+z0diac.run("MzgzMzg1MTk4NTM0MDY2MTg3.DdOKNg.k92hJ_rHCjllSa_ehn81b2s9uNk")
