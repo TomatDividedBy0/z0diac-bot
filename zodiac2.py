@@ -140,13 +140,21 @@ async def renamefuco(ctx):
 
 @z0diac.command()
 async def archive(ctx):
-    channel_ids = (384011944018837524, 432574353822056448, 381170494814289925)
-    for x in itertools.chain.from_iterable(z0diac.get_channel(snowflake).pins() for snowflake in channel_ids):
-            async with ctx.typing():
-                pins = await x
-                embed = discord.Embed(title=x.author.nick, description=pins.content, thumbnail=pins.author.avatar)
-                await ctx.channel.send(embed=embed)
-
+    if ctx.message.author == z0diac.get_member(176160436331216896):
+         async with ctx.typing():
+                y = await z0diac.get_channel(432574353822056448).pins()
+                y.reverse()
+                for x in y:
+                    try:
+                        embed = discord.Embed(title=(x.author.display_name + " (" + x.created_at.strftime("%Y-%m-%d %H:%M:%S") + ")"), color=x.author.color, description=x.content)
+                        embed.set_thumbnail(url=x.author.avatar_url)
+                        await z0diac.get_channel(446400765775314947).send(embed=embed)
+                    except:
+                        embed = discord.Embed(title=(x.author.display_name + " (" + x.created_at.strftime("%Y-%m-%d %H:%M:%S") + ")"),description=x.content)
+                        embed.set_thumbnail(url=x.author.avatar_url)
+                        await z0diac.get_channel(446400765775314947).send(embed=embed)
+    else:
+        await ctx.channel.send("You do not have permission to use this.")
 
 #@z0diac.command()
 #async def epregistereveryone(ctx):
@@ -246,6 +254,40 @@ async def buy(ctx):
                     f.seek(0)
                     json.dump(repkey, f)
                     f.truncate()
+            elif ctx.message.content[5:9] == 'gift':
+                try:
+                    with open("dictionary.json", 'r+') as f:
+                        repkey = json.load(f)
+                        currentvalue_recipient = repkey.get(str(ctx.message.raw_mentions[0]))
+                        currentvalue_giver = repkey.get(str(ctx.message.author.id))
+                        dollar_amount = ctx.message.content.find('>') + 1
+                        if ctx.message.raw_mentions[0] != ctx.message.author.id:
+                            if currentvalue_giver - int(ctx.message.content[dollar_amount:]) >= 0:
+                                if int(ctx.message.content[dollar_amount:]) > 0:
+                                    repkey[str(ctx.message.author.id)] = (
+                                    currentvalue_giver - int(ctx.message.content[dollar_amount:]))
+                                    f.seek(0)
+                                    json.dump(repkey, f)
+                                    f.truncate()
+                                    with open("dictionary.json", 'r+') as file:
+                                        repkey2 = json.load(file)
+                                        repkey2[str(ctx.message.raw_mentions[0])] = (
+                                        currentvalue_recipient + int(ctx.message.content[dollar_amount:]))
+                                        file.seek(0)
+                                        json.dump(repkey2, file)
+                                        file.truncate()
+                                    payment = ctx.message.content[(ctx.message.content.find('>') + 1):]
+                                    await ctx.channel.send( 'You have successfully gifted ' + (str(ctx.message.mentions[0]))[:-5] + payment + ' Effort Points.')
+                                else:
+                                    await ctx.channel.send('Gifts must be a positive number, nice try.')
+                            else:
+                                print('You cannot afford that!')
+                        else:
+                            await ctx.channel.send("Nice try, but you can't give yourself cash.")
+                except IndexError or ValueError:
+                    await ctx.channel.send(
+                        'Something went wrong, remember to format your message as: /buy gift [mentioned person] [number].')
+                    traceback.print_exc()
 @z0diac.command()
 async def apolitical(ctx):
     await ctx.message.author.add_roles(discord.utils.get(ctx.guild.roles, id=409483695582478348))
