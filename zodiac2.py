@@ -1,11 +1,9 @@
 import discord
 from discord.ext import commands
 import time
-import itertools
 import json
 import traceback
 from PyDictionary import PyDictionary
-import subprocess
 
 dictionary=PyDictionary()
 
@@ -17,8 +15,7 @@ z0diac = commands.Bot(command_prefix= '/', description='A bot for the Political 
 async def on_ready():
     print('Connected to '+str(len(set(z0diac.get_all_members())))+' users')
     print('--------')
-    status = discord.Game("with your tax dollars.")
-    await z0diac.change_presence(activity=status)
+
 
 
 # Adding Voting To Messages
@@ -88,10 +85,24 @@ async def whatis(ctx):
                 message = await ctx.message.author.send("**Question 2:**\nDo you believe said government should be in charge of the market? (Y for yes, and N for no.)")
                 await message.add_reaction('🇾')
                 await message.add_reaction('🇳')
+                def check(reaction, user):
+                    return reaction.count == 2
+                reaction2 = await z0diac.wait_for('reaction_add', check=check)
+                if reaction2[0].emoji == '🇾':
+                    message = await ctx.message.author.send("**Question 2:**\nDo you believe said government should be in charge of the market? (Y for yes, and N for no.)")
+                    await message.add_reaction('🇾')
+                    await message.add_reaction('🇳')
             if reaction2[0].emoji == '🇳':
                 message = await ctx.message.author.send("**Question 2:**\nDo you believe in abolishing the concept of owning private property? (Y for yes, and N for no.)")
                 await message.add_reaction('🇾')
                 await message.add_reaction('🇳')
+                def check(reaction, user):
+                    return reaction.count == 2
+                reaction2 = await z0diac.wait_for('reaction_add', check=check)
+                if reaction2[0].emoji == '🇾':
+                    message = await ctx.message.author.send( "**Question 3:**\nDo you believe said government should be in charge of the market? (Y for yes, and N for no.)")
+                    await message.add_reaction('🇾')
+                    await message.add_reaction('🇳')
         elif label == "bigdab" or label == "bigDab" or label == "big dab":
             await ctx.channel.send("bigdab is a shop item that allows you to post a full-sized dab instead of a tiny emote. This item costs you 10 EP.")
         elif label == "renamefuco" or label == "renameFuCo" or label == "rename FuCo":
@@ -114,29 +125,19 @@ async def whatis(ctx):
         await ctx.message.delete()
         await ctx.message.author.send("You cannot do that in this channel.")
 
-
 @z0diac.event
 async def on_raw_reaction_add(reaction, message, channel, reacter):
     if str(reaction) == '📌':
         x = await discord.utils.get(discord.utils.get(z0diac.get_all_channels(), id=channel).get_message(all), id=message)
         embed = discord.Embed(title=x.author.nick, description=x.content, thumbnail=x.author.avatar)
         await z0diac.get_channel(446400765775314947).send(embed=embed)
+        await z0diac.process_commands(message)
     else:
         print('Fail')
-
+        await z0diac.process_commands(message)
 @z0diac.command()
 async def renamefuco(ctx):
     await ctx.channel.send('Thank you for participating in the free shop beta! You can now use your effort points to use this command. Simply do `/buy renamefuco [NAME]` to use the command!')
-
-
-#@z0diac.event
-#async def on_message(message):
- #   if message.channel == message.guild.get_channel(432574353822056448):
-  #      if '<:' in message.content:
-   #        await message.delete()
-    #    elif '😂' in message.content or '🖕' in message.content or '🤔'in message.content:
-    #        await message.delete()
-
 
 @z0diac.command()
 async def archive(ctx):
@@ -156,59 +157,6 @@ async def archive(ctx):
     else:
         await ctx.channel.send("You do not have permission to use this.")
 
-#@z0diac.command()
-#async def epregistereveryone(ctx):
- #       rep_dict = [{x.id: 0} for x in ctx.guild.members]
-  #      print(rep_dict)
-   #     with open('dictionary.json') as f:
-    #        key = json.load(f)
-     #   with open('dictionary.json', 'w') as f:
-      #      json.dump(rep_dict, f)
-
-
-#@z0diac.event
-#async def on_member_join(user):
- #   rep_dict = {user.id: 0}
-  #  with open('dictionary.json') as f:
-   #     key = json.load(f)
-    #key.update(rep_dict)
-    #with open('dictionary.json', 'w') as f:
-     #   json.dump(key, f)
-      #  print('Successfully registered.')
-
-
-@z0diac.command()
-async def give(ctx):
-    try:
-        with open("dictionary.json", 'r+') as f:
-            repkey = json.load(f)
-            currentvalue_recipient = repkey.get(str(ctx.message.raw_mentions[0]))
-            currentvalue_giver = repkey.get(str(ctx.message.author.id))
-            dollar_amount = ctx.message.content.find('>') + 1
-            if ctx.message.raw_mentions[0] != ctx.message.author.id:
-                if currentvalue_giver - int(ctx.message.content[dollar_amount:]) >= 0:
-                    if int(ctx.message.content[dollar_amount:]) > 0:
-                        repkey[str(ctx.message.author.id)] = (currentvalue_giver - int(ctx.message.content[dollar_amount:]))
-                        f.seek(0)
-                        json.dump(repkey, f)
-                        f.truncate()
-                        with open("dictionary.json", 'r+') as file:
-                            repkey2 = json.load(file)
-                            repkey2[str(ctx.message.raw_mentions[0])] = (currentvalue_recipient + int(ctx.message.content[dollar_amount:]))
-                            file.seek(0)
-                            json.dump(repkey2, file)
-                            file.truncate()
-                        payment = ctx.message.content[(ctx.message.content.find('>') + 1):]
-                        await ctx.channel.send('You have successfully gifted ' + (str(ctx.message.mentions[0]))[:-5] + payment + ' Effort Points.')
-                    else:
-                        await ctx.channel.send('Gifts must be a positive number, nice try.')
-                else:
-                    print('You cannot afford that!')
-            else:
-                await ctx.channel.send("Nice try, but you can't give yourself cash.")
-    except IndexError or ValueError:
-        await ctx.channel.send('Something went wrong, remember to format your message as: /give [mentioned person] [number].')
-        traceback.print_exc()
 
 @z0diac.command()
 async def buy(ctx):
@@ -254,6 +202,11 @@ async def buy(ctx):
                     f.seek(0)
                     json.dump(repkey, f)
                     f.truncate()
+                    role_name = await ctx.guild.create_role(name=ctx.message.content[12:],mentionable=True)
+                    await ctx.message.author.add_roles(role_name)
+                    await ctx.channel.send('You have been given the' + ctx.message.content[12:] + ' role.')
+                else:
+                    await ctx.channel.send('You need ' + str(dollar_amount) + ' EP to do that!')
             elif ctx.message.content[5:9] == 'gift':
                 try:
                     with open("dictionary.json", 'r+') as f:
@@ -285,12 +238,13 @@ async def buy(ctx):
                         else:
                             await ctx.channel.send("Nice try, but you can't give yourself cash.")
                 except IndexError or ValueError:
-                    await ctx.channel.send(
-                        'Something went wrong, remember to format your message as: /buy gift [mentioned person] [number].')
+                    await ctx.channel.send('Something went wrong, remember to format your message as: /buy gift [mentioned person] [number].')
                     traceback.print_exc()
+
+
 @z0diac.command()
 async def apolitical(ctx):
     await ctx.message.author.add_roles(discord.utils.get(ctx.guild.roles, id=409483695582478348))
     await ctx.channel.send('You are no longer in open-debate and now have access to lounge!')
 
-z0diac.run("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+z0diac.run("MzgzMzg1MTk4NTM0MDY2MTg3.DeSjjg.UTV6BKxXzMrqIVmgMDahKsfZDzs")
