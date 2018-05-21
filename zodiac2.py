@@ -69,14 +69,17 @@ async def whatis(ctx):
             repkey = json.load(f)
             await ctx.send(str(ctx.message.author.name) + " has " + str(repkey.get(str(ctx.message.author.id))) + ' Effort Points.')
     else:
-        await ctx.channel.send(label + " is not defined.")
+        word = ctx.message.content[7:]
+        meaningobject = dictionary.meaning(word)
+        try:
+            definition = next(iter(meaningobject.values()))[0]
+            await ctx.channel.send(ctx.message.content[7:] + " means " + definition)
+        except:
+            await ctx.channel.send(label + " is not defined.")
 
-@z0diac.command()
-async def define(ctx):
-    word = ctx.message.content[7:]
-    meaningobject = dictionary.meaning(word)
-    definition = next(iter(meaningobject.values()))[0]
-    await ctx.channel.send(ctx.message.content[7:] + "means " + definition)
+
+
+
 @z0diac.command()
 async def rolequiz(ctx):
     await ctx.message.author.send("Welcome to the official compact edition of the PWH political test. \nYou will be asked various questions on your values to determine your ideology. Simply say ready when you are ready to start.")
@@ -246,4 +249,5 @@ async def buy(ctx):
 async def apolitical(ctx):
     await ctx.message.author.add_roles(discord.utils.get(ctx.guild.roles, id=409483695582478348))
     await ctx.channel.send('You are no longer in open-debate and now have access to lounge!')
+
 z0diac.run("MzgzMzg1MTk4NTM0MDY2MTg3.DdOKNg.k92hJ_rHCjllSa_ehn81b2s9uNk")
