@@ -250,4 +250,4 @@ async def apolitical(ctx):
     await ctx.message.author.add_roles(discord.utils.get(ctx.guild.roles, id=409483695582478348))
     await ctx.channel.send('You are no longer in open-debate and now have access to lounge!')
 
-z0diac.run("MzgzMzg1MTk4NTM0MDY2MTg3.DdOKNg.k92hJ_rHCjllSa_ehn81b2s9uNk")
+z0diac.run("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
