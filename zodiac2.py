@@ -60,6 +60,14 @@ async def whatis(ctx):
         await ctx.channel.send("A paleoliberal or a RINO/Whig in the US is a term for a conservative who is a lot more moderate and centrist in their beliefs. They typically are found close to the center on issues of tradition, being economically to the right, typically being the parallel to Blue Dogs.")
     elif label == "Theologue" or label == "theologue":
         await ctx.channel.send("Theologues are socially conservative, but vary widely on their economic policies. This includes Distributists, Christian Democrats, and right-theologues. Their main deciding factor in voting is their religion.")
+    elif label == "On Sale" or label == "on sale" or label == "On sale" or label == "onsale" or label == "Onsale" or label == "onSale":
+        await ctx.channel.send("Currently, we have the following items:\n -ad\n -renamefuco\n -membership\n -bigdab\n -subrole.\n Do `/whatis [Item]` to learn about pricing and descriptions.")
+    elif label == "specs" or label == "Specs" or label == "yourspecs" or label== "your specs":
+        await ctx.channel.send('**CPU:** Opteron 3365\n**GPU:** Radeon R7 360\n**HDD:** 320GB HDD\n**RAM:** 8GB DDR3\n**OS:** Kubuntu')
+    elif label == "myBalance" or label == "mybalance" or label == "my balance":
+        with open("dictionary.json", 'r') as f:
+            repkey = json.load(f)
+            await ctx.send(str(ctx.message.author.name) + " has " + str(repkey.get(str(ctx.message.author.id))) + ' Effort Points.')
     else:
         await ctx.channel.send(label + " is not defined.")
 
