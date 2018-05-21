@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+    <question content="First question">
+        <yes>
+            <question content="yes, second">
+                <yes>
+                    <question content="yes, yes, third">
+                        <yes>
+                            <label labelname="label"></label>
+                        </yes>
+                        <no>
+                            <label labelname="label"></label>
+                        </no>
+                    </question>
+                </yes>
+                <no>
+                    <question content="yes, no, third">
+                        <yes>
+                            <label labelname="label"></label>
+                        </yes>
+                        <no>
+                            <label labelname="label"></label>
+                        </no>
+                    </question>
+                </no>
+            </question>
+        </yes>
+        <no>
+            <question content="no, second">
+                <yes>
+                    <question content="no, yes, second">
+                        <yes>
+                            <label labelname="label"></label>
+                        </yes>
+                        <no>
+                            <label labelname="label"></label>
+                        </no>
+                    </question>
+                </yes>
+                <no>
+                    <question content="no, no, second">
+                        <yes>
+                            <label labelname="label"></label>
+                        </yes>
+                        <no>
+                            <label labelname="label"></label>
+                        </no>
+                    </question>
+                </no>
+            </question>
+        </no>
+    </question>
+</quiz>
