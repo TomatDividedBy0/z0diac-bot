@@ -5,6 +5,8 @@ import itertools
 import json
 import traceback
 from PyDictionary import PyDictionary
+import subprocess
+
 dictionary=PyDictionary()
 
 
@@ -59,7 +61,7 @@ async def whatis(ctx):
     elif label == "Theologue" or label == "theologue":
         await ctx.channel.send("Theologues are socially conservative, but vary widely on their economic policies. This includes Distributists, Christian Democrats, and right-theologues. Their main deciding factor in voting is their religion.")
     else:
-        await ctx.channel.send(label + " is not a role.")
+        await ctx.channel.send(label + " is not defined.")
 
 @z0diac.command()
 async def define(ctx):
@@ -118,11 +120,6 @@ async def archive(ctx):
       #      json.dump(rep_dict, f)
 
 
-@z0diac.command()
-async def specs(ctx):
-    await ctx.channel.send('**CPU:** Opteron 3365\n**GPU:** Radeon R7 360\n**HDD:** 320GB HDD\n**RAM:** 8GB DDR3\n**OS:** Kubuntu')
-
-
 #@z0diac.event
 #async def on_member_join(user):
  #   rep_dict = {user.id: 0}
@@ -132,13 +129,6 @@ async def specs(ctx):
     #with open('dictionary.json', 'w') as f:
      #   json.dump(key, f)
       #  print('Successfully registered.')
-
-
-@z0diac.command()
-async def balance(ctx):
-    with open("dictionary.json", 'r') as f:
-        repkey = json.load(f)
-        await ctx.send(str(ctx.message.author.name) + " has " + str(repkey.get(str(ctx.message.author.id))) + ' Effort Points.')
 
 
 @z0diac.command()
@@ -176,31 +166,28 @@ async def buy(ctx):
     with open("dictionary.json", 'r+') as f:
         repkey = json.load(f)
         currentvalue_customer = repkey.get(str(ctx.message.author.id))
-        if ctx.message.content[5:] == 'bigdab' or ctx.message.content[:5] == 'dab':
-            if ctx.channel != z0diac.get_channel(432574353822056448):
-                dollar_amount = 5
-                if currentvalue_customer - dollar_amount >= 0:
-                    repkey[str(ctx.message.author.id)] = currentvalue_customer - dollar_amount
-                    f.seek(0)
-                    json.dump(repkey, f)
-                    f.truncate()
-                    with open('bigdab.png','rb') as image:
-                        await ctx.channel.send(file=image)
-                else:
-                    await ctx.channel.send('You need 25 EP to do that!')
-            else:
-                await ctx.channel.send("You can't dab here!")
-        elif ctx.message.content[5:15] == 'renamefuco':
-            if ctx.message.author != discord.utils.get(ctx.guild.members, id=346821778829475861):
-                fuco = ctx.guild.get_member(346821778829475861)
-                beforefuco = fuco.display_name
-                if ctx.channel != z0diac.get_channel(432574353822056448):
-                    dollar_amount = 25
+        if ctx.channel != z0diac.get_channel(432574353822056448):
+            if ctx.message.content[5:] == 'bigdab' or ctx.message.content[:5] == 'dab':
+                    dollar_amount = 5
                     if currentvalue_customer - dollar_amount >= 0:
                         repkey[str(ctx.message.author.id)] = currentvalue_customer - dollar_amount
                         f.seek(0)
                         json.dump(repkey, f)
                         f.truncate()
+                        with open('bigdab.png','rb') as image:
+                            await ctx.channel.send(file=image)
+                    else:
+                        await ctx.channel.send('You need 25 EP to do that!')
+            elif ctx.message.content[5:15] == 'renamefuco':
+                if ctx.message.author != discord.utils.get(ctx.guild.members, id=346821778829475861):
+                    fuco = ctx.guild.get_member(346821778829475861)
+                    beforefuco = fuco.display_name
+                    dollar_amount = 25
+                    if currentvalue_customer - dollar_amount >= 0:
+                            repkey[str(ctx.message.author.id)] = currentvalue_customer - dollar_amount
+                            f.seek(0)
+                            json.dump(repkey, f)
+                            f.truncate()
                     try:
                         await fuco.edit(nick=ctx.message.content[16:])
                         await ctx.channel.trigger_typing()
@@ -209,42 +196,43 @@ async def buy(ctx):
                         await ctx.channel.send(beforefuco + ', more like ' + afterfuco + '!')
                     except discord.ext.commands.errors.CommandInvokeError:
                         await ctx.channel.send("Too long.")
-            else:
-                await ctx.channel.send("Nice try, FuCo.")
-        elif ctx.message.content[5:12] == 'subrole':
-            if ctx.channel != z0diac.get_channel(432574353822056448):
-                        dollar_amount = (75 + len(ctx.message.author.roles) * 50)
-                        if currentvalue_customer - dollar_amount >= 0:
-                            repkey[str(ctx.message.author.id)] = currentvalue_customer - dollar_amount
-                            f.seek(0)
-                            json.dump(repkey, f)
-                            f.truncate()
-                            await ctx.guild.create_role(name=ctx.message.content[12:])
-                            await ctx.message.author.add_roles()
-                            await ctx.channel.send('You have been given the' + ctx.message.content[12:] + ' role.')
-                        else:
-                            await ctx.channel.send('You need ' + str(dollar_amount) + ' EP to do that!')
-        elif ctx.message.content[5:7] == 'ad':
-            if ctx.channel != z0diac.get_channel(432574353822056448):
-                dollar_amount = 200
+                else:
+                    await ctx.channel.send("Nice try, FuCo.")
+            elif ctx.message.content[5:12] == 'subrole':
+                dollar_amount = (75 + len(ctx.message.author.roles) * 50)
+                if currentvalue_customer - dollar_amount >= 0:
+                    repkey[str(ctx.message.author.id)] = currentvalue_customer - dollar_amount
+                    f.seek(0)
+                    json.dump(repkey, f)
+                    f.truncate()
+                    def role():
+                        ctx.guild.create_role(name=ctx.message.content[12:])
+                    await ctx.message.author.add_roles(role())
+                    await ctx.channel.send('You have been given the' + ctx.message.content[12:] + ' role.')
+                else:
+                    await ctx.channel.send('You need ' + str(dollar_amount) + ' EP to do that!')
+            elif ctx.message.content[5:7] == 'ad':
+                dollar_amount = 75
                 if currentvalue_customer - dollar_amount >= 0:
                     repkey[str(ctx.message.author.id)] = currentvalue_customer - dollar_amount
                     f.seek(0)
                     json.dump(repkey, f)
                     f.truncate()
                     await z0diac.get_channel(447424864907689984).send("**By** **" + ctx.message.author.name + ":** " + ctx.message.content[8:])
-                else :
+                else:
                     await ctx.channel.send('You need 200 EP to do that!')
-        elif ctx.message.content[5:] == 'membership':
-            if ctx.channel != z0diac.get_channel(432574353822056448):
+            elif ctx.message.content[5:] == 'membership':
                 dollar_amount = 300
                 if currentvalue_customer - dollar_amount >= 0:
                     await ctx.message.author.add_roles(discord.utils.get(ctx.guild.roles,id=447429561366478849))
                     await ctx.channel.send('You now have access to lounge!')
                 else:
                     await ctx.channel.send('You need 300 EP to do that!')
+            else:
+                await ctx.channel.send('Sorry, I did not get that.')
         else:
-            await ctx.channel.send('Sorry, I did not get that.')
+            await ctx.message.delete()
+            await ctx.message.author.send("You cannot do that in this channel.")
 
 @z0diac.command()
 async def apolitical(ctx):
