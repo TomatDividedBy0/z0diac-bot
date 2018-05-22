@@ -60,7 +60,7 @@ async def whatis(ctx):
             await ctx.channel.send("A paleoliberal or a RINO/Whig in the US is a term for a conservative who is a lot more moderate and centrist in their beliefs. They typically are found close to the center on issues of tradition, being economically to the right, typically being the parallel to Blue Dogs.")
         elif label == "Theologue" or label == "theologue":
             await ctx.channel.send("Theologues are socially conservative, but vary widely on their economic policies. This includes Distributists, Christian Democrats, and right-theologues. Their main deciding factor in voting is their religion.")
-        elif label == "On Sale" or label == "on sale" or label == "On sale" or label == "onsale" or label == "Onsale" or label == "onSale":
+        elif label == "On Sale" or label == "for sale" or label == "For sale" or label == "forsale" or label == "Forsale" or label == "forSale":
             await ctx.channel.send("Currently, we have the following items:\n -ad\n -renamefuco\n -membership\n -bigdab\n -subrole.\n Do `/whatis [Item]` to learn about pricing and descriptions.")
         elif label == "specs" or label == "Specs" or label == "yourspecs" or label== "your specs":
             await ctx.channel.send('**CPU:** Opteron 3365\n**GPU:** Radeon R7 360\n**HDD:** 320GB HDD\n**RAM:** 8GB DDR3\n**OS:** Kubuntu')
@@ -127,36 +127,31 @@ async def whatis(ctx):
 
 @z0diac.event
 async def on_raw_reaction_add(reaction, message, channel, reacter):
-    if str(reaction) == '📌':
-        x = await discord.utils.get(discord.utils.get(z0diac.get_all_channels(), id=channel).get_message(all), id=message)
-        embed = discord.Embed(title=x.author.nick, description=x.content, thumbnail=x.author.avatar)
+    #umbrella_roles = {discord.utils.get(message.guild.roles, id=420735827023495169)}
+    if discord.utils.get(z0diac.get_all_channels(),id=420061566331781121).get_message(448475971553591300) == discord.utils.get(z0diac.get_all_channels(),id=420061566331781121).get_message(message):
+        if reaction == 448475108290592769:
+            await discord.utils.get(z0diac.get_all_members(), id=reacter).add_role(443242847681118218)
+            await discord.utils.get(z0diac.get_all_members(), id=reacter).send('You have been given the ' + discord.utils.get(message.guild.roles, id=443242847681118218) + ' role.')
+    elif discord.utils.get(z0diac.get_all_channels(), id=420061566331781121).get_message(448476172343574528) == discord.utils.get(z0diac.get_all_channels(),id=420061566331781121).get_message(message):
+        if str(reaction) == '1⃣':
+            await discord.utils.get(z0diac.get_all_members(), id=reacter).add_role(381176934131957760)
+            await reacter.send('You have been given the ' + discord.utils.get(message.guild.roles, id=381176934131957760) + ' role.')
+            await reacter.add_roles(discord.utils.get(channel.guild.roles, id=409483695582478348))
+            await reacter.send('You are no longer in open-debate and now have access to lounge!')
+    elif discord.utils.get(z0diac.get_all_channels(), id=420061566331781121).get_message(448476403638206474) == discord.utils.get(z0diac.get_all_channels(),id=420061566331781121).get_message(message):
+        if str(reaction) == '1⃣':
+            print('ye')
+    elif str(reaction) == '📌' or str(reaction) == '📍':
+        x = await discord.utils.get(z0diac.get_all_channels(), id=channel).get_message(message)
+        embed = discord.Embed(title=(x.author.display_name + " (" + x.created_at.strftime("%Y-%m-%d %H:%M:%S") + ")"), color=x.author.color, description=x.content)
+        embed.set_thumbnail(url=x.author.avatar_url)
         await z0diac.get_channel(446400765775314947).send(embed=embed)
-        await z0diac.process_commands(message)
     else:
         print('Fail')
-        await z0diac.process_commands(message)
+
 @z0diac.command()
 async def renamefuco(ctx):
     await ctx.channel.send('Thank you for participating in the free shop beta! You can now use your effort points to use this command. Simply do `/buy renamefuco [NAME]` to use the command!')
-
-@z0diac.command()
-async def archive(ctx):
-    if ctx.message.author == z0diac.get_member(176160436331216896):
-         async with ctx.typing():
-                y = await z0diac.get_channel(432574353822056448).pins()
-                y.reverse()
-                for x in y:
-                    try:
-                        embed = discord.Embed(title=(x.author.display_name + " (" + x.created_at.strftime("%Y-%m-%d %H:%M:%S") + ")"), color=x.author.color, description=x.content)
-                        embed.set_thumbnail(url=x.author.avatar_url)
-                        await z0diac.get_channel(446400765775314947).send(embed=embed)
-                    except:
-                        embed = discord.Embed(title=(x.author.display_name + " (" + x.created_at.strftime("%Y-%m-%d %H:%M:%S") + ")"),description=x.content)
-                        embed.set_thumbnail(url=x.author.avatar_url)
-                        await z0diac.get_channel(446400765775314947).send(embed=embed)
-    else:
-        await ctx.channel.send("You do not have permission to use this.")
-
 
 @z0diac.command()
 async def buy(ctx):
@@ -243,8 +238,12 @@ async def buy(ctx):
 
 
 @z0diac.command()
-async def apolitical(ctx):
-    await ctx.message.author.add_roles(discord.utils.get(ctx.guild.roles, id=409483695582478348))
-    await ctx.channel.send('You are no longer in open-debate and now have access to lounge!')
+async def vote(ctx):
+    if ctx.message.content[6:12] == 'speaker':
+        if discord.utils.get(ctx.guild.roles, id=416369684179320834) in ctx.message.author.roles or discord.utils.get(ctx.guild.roles, id=443242847681118218) in ctx.message.author.roles or discord.utils.get(ctx.guild.roles, id=443242847681118218) in ctx.message.author.roles or discord.utils.get(ctx.guild.roles, id=420735827023495169) in ctx.message.author.roles or discord.utils.get(ctx.guild.roles, id=382557327892676619) in ctx.message.author.roles or discord.utils.get(ctx.guild.roles, id=381178125591117827) in ctx.message.author.roles:
+            await ctx.message.channel.send('Mention who would you like to vote for for speaker:\nBladeHoldin - Libertarian Socialist\nThe Firebird - Green\nBearTheIndependent - Social Democrat\nTsarNicky - Paternalist')
+
+
+
 
 z0diac.run("MzgzMzg1MTk4NTM0MDY2MTg3.DeSjjg.UTV6BKxXzMrqIVmgMDahKsfZDzs")
