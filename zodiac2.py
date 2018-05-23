@@ -648,4 +648,4 @@ async def suggest(ctx):
     await message.add_reaction('❎')
     await ctx.message.delete()
 
-z0diac.run("MzgzMzg1MTk4NTM0MDY2MTg3.DeSjjg.UTV6BKxXzMrqIVmgMDahKsfZDzs")
+z0diac.run("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
