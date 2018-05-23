@@ -60,6 +60,8 @@ async def whatis(ctx):
             await ctx.channel.send("A paleoliberal or a RINO/Whig in the US is a term for a conservative who is a lot more moderate and centrist in their beliefs. They typically are found close to the center on issues of tradition, being economically to the right, typically being the parallel to Blue Dogs.")
         elif label == "Theologue" or label == "theologue":
             await ctx.channel.send("Theologues are socially conservative, but vary widely on their economic policies. This includes Distributists, Christian Democrats, and right-theologues. Their main deciding factor in voting is their religion.")
+        elif label == "Autocrat" or label == "autocrat":
+            await ctx.channel.send("Third Positioners believe that the control of economic and social issues is best kept in the hands of a few or singular entities; they are economically incredibly authoritarian and interventionist, but differ on conservative/progressive.")
         elif label == "On Sale" or label == "for sale" or label == "For sale" or label == "forsale" or label == "Forsale" or label == "forSale":
             await ctx.channel.send("Currently, we have the following items:\n -ad\n -renamefuco\n -membership\n -bigdab\n -subrole.\n Do `/whatis [Item]` to learn about pricing and descriptions.")
         elif label == "specs" or label == "Specs" or label == "yourspecs" or label== "your specs":
@@ -70,7 +72,7 @@ async def whatis(ctx):
                 await ctx.send(str(ctx.message.author.name) + " has " + str(repkey.get(str(ctx.message.author.id))) + ' Effort Points.')
         elif label == "myideology" or label == "my ideology" or label == "myIdeology":
             await ctx.message.delete()
-            message_to = await ctx.message.author.send("Welcome to the official compact edition of the PWH political test. \nYou will be asked various questions on your values to determine your ideology. You will be presented with multiple choices ranging from A to E. Simply click the corresponding button to answer said question. To begin, click the green check mark.")
+            message_to = await ctx.message.author.send("Welcome to the official compact edition of the PWH political test. \nYou will be asked various questions on your values to determine your ideology. You will be presented with either a yes or a no option. Simply click the corresponding button to answer said question. To begin, click the green check mark.")
             await message_to.add_reaction('✅')
             def check(reaction, user):
                 return reaction.count == 2
@@ -82,27 +84,304 @@ async def whatis(ctx):
                 return reaction.count == 2
             reaction2 = await z0diac.wait_for('reaction_add', check=check)
             if reaction2[0].emoji == '🇾':
-                message = await ctx.message.author.send("**Question 2:**\nDo you believe said government should be in charge of the market? (Y for yes, and N for no.)")
+                await message_3.remove_reaction('🇳',z0diac.user)
+                message = await ctx.message.author.send("**Question 2:**\nDo you believe that Lockean rights are part of, if not the inalienable human rights? (Y for yes, and N for no.)")
                 await message.add_reaction('🇾')
                 await message.add_reaction('🇳')
                 def check(reaction, user):
                     return reaction.count == 2
-                reaction2 = await z0diac.wait_for('reaction_add', check=check)
-                if reaction2[0].emoji == '🇾':
-                    message = await ctx.message.author.send("**Question 2:**\nDo you believe said government should be in charge of the market? (Y for yes, and N for no.)")
+                reaction3 = await z0diac.wait_for('reaction_add', check=check)
+                if reaction3[0].emoji == '🇾':
+                    await message.remove_reaction('🇳', member=z0diac.user)
+                    message = await ctx.message.author.send("**Question 3:**\nDo you believe rights do not expand beyond protections *from* government tyranny? (Y for yes, and N for no.)")
                     await message.add_reaction('🇾')
                     await message.add_reaction('🇳')
+                    def check(reaction, user):
+                        return reaction.count == 2
+                    reaction7 = await z0diac.wait_for('reaction_add', check=check)
+                    if reaction7[0].emoji == '🇾':
+                        await message.remove_reaction('🇳', member=z0diac.user)
+                        message = await ctx.message.author.send("**Question 4:**\nDo you believe our children should be taught to respect their country? (Y for yes, and N for no.)")
+                        await message.add_reaction('🇾')
+                        await message.add_reaction('🇳')
+                        def check(reaction, user):
+                            return reaction.count == 2
+                        reaction9 = await z0diac.wait_for('reaction_add', check=check)
+                        if reaction9[0].emoji == '🇾':
+                            await message.remove_reaction('🇳', member=z0diac.user)
+                            message = await ctx.message.author.send("**Question 5:**\nDo you respect your country for its founding moral values over its founding political values? (Y for yes, and N for no.)")
+                            await message.add_reaction('🇾')
+                            await message.add_reaction('🇳')
+                            def check(reaction, user):
+                                return reaction.count == 2
+                            reaction14 = await z0diac.wait_for('reaction_add', check=check)
+                            if reaction14[0].emoji == '🇾':
+                                await message.remove_reaction('🇳', member=z0diac.user)
+                                message = await ctx.message.author.send("**Question 6:**\nDo you believe it is your nation's moral duty to spread its moral/political values around the world through foreign intervention? (Y for yes, and N for no.)")
+                                await message.add_reaction('🇾')
+                                await message.add_reaction('🇳')
+                                def check(reaction, user):
+                                    return reaction.count == 2
+                                reaction15 = await z0diac.wait_for('reaction_add', check=check)
+                                if reaction15[0].emoji == '🇾':
+                                    await message.remove_reaction('🇳', member=z0diac.user)
+                                    message = await ctx.message.author.send("Your umbrella role is... **Nationalist**. Your subrole is... **Imperial Conservative**. If you have more questions or a more specific ideology to add, please DM Dakota.")
+                                if reaction15[0].emoji == '🇳':
+                                    await message.remove_reaction('🇾', member=z0diac.user)
+                                    message = await ctx.message.author.send("Your umbrella role is... **Paleoconservative**. If you have more questions or a more specific ideology to add, please DM Dakota.")
+                            if reaction14[0].emoji == '🇳':
+                                await message.remove_reaction('🇾', member=z0diac.user)
+                                message = await ctx.message.author.send("Your umbrella role is... **Nationalist**. Your subrole is... **Civic Nationalist**. If you have more questions or a more specific ideology to add, please DM Dakota.")
+                        if reaction9[0].emoji == '🇳':
+                            await message.remove_reaction('🇾', member=z0diac.user)
+                            message = await ctx.message.author.send("**Question 5:**\nDo you believe that the market's freedom is equally as important as an individual's freedom? (Y for yes, and N for no.)")
+                            await message.add_reaction('🇾')
+                            await message.add_reaction('🇳')
+                            def check(reaction, user):
+                                return reaction.count == 2
+                            reaction10 = await z0diac.wait_for('reaction_add', check=check)
+                            if reaction10[0].emoji == '🇾':
+                                await message.remove_reaction('🇳', member=z0diac.user)
+                                message = await ctx.message.author.send("**Question 6:**\nDo you support the ownership of land? (Y for yes, and N for no.)")
+                                await message.add_reaction('🇾')
+                                await message.add_reaction('🇳')
+                                def check(reaction, user):
+                                    return reaction.count == 2
+                                reaction11 = await z0diac.wait_for('reaction_add', check=check)
+                                if reaction11[0].emoji == '🇾':
+                                    await message.remove_reaction('🇳', member=z0diac.user)
+                                    message = await ctx.message.author.send("**Question 7:**\nDo you support global military intervention? (Y for yes, and N for no.)")
+                                    await message.add_reaction('🇾')
+                                    await message.add_reaction('🇳')
+                                    def check(reaction, user):
+                                        return reaction.count == 2
+                                    reaction17 = await z0diac.wait_for('reaction_add', check=check)
+                                    if reaction17[0].emoji == '🇾':
+                                        await message.remove_reaction('🇳', member=z0diac.user)
+                                        message = await ctx.message.author.send("Your umbrella role is... **Libertarian**. Your subrole is... **Neolibertarian**. If you have more questions or a more specific ideology to add, please DM Dakota.")
+                                    if reaction17[0].emoji == '🇳':
+                                        await message.remove_reaction('🇾', member=z0diac.user)
+                                        message = await ctx.message.author.send("Your umbrella role is... **Libertarian**. Your subrole is... **Paleolibertarian**. If you have more questions or a more specific ideology to add, please DM Dakota.")
+                                if reaction11[0].emoji == '🇳':
+                                    await message.remove_reaction('🇾', member=z0diac.user)
+                                    message = await ctx.message.author.send("Your umbrella role is... **Libertarian**. Your subrole is... **Geolibertarian**. If you have more questions or a more specific ideology to add, please DM Dakota.")
+                            if reaction10[0].emoji == '🇳':
+                                await message.remove_reaction('🇾', member=z0diac.user)
+                                message = await ctx.message.author.send("**Question 6:**\nDo you believe reason should always take precedent over all else, including social norms and dogma? (Y for yes, and N for no.)")
+                                await message.add_reaction('🇾')
+                                await message.add_reaction('🇳')
+                                def check(reaction, user):
+                                    return reaction.count == 2
+                                reaction12 = await z0diac.wait_for('reaction_add', check=check)
+                                if reaction12[0].emoji == '🇳':
+                                    await message.remove_reaction('🇾', member=z0diac.user)
+                                    message = await ctx.message.author.send("**Question 7:**\nIs religion the largest driving factor in your political beliefs?")
+                                    def check(reaction, user):
+                                        return reaction.count == 2
+                                    reaction13 = await z0diac.wait_for('reaction_add', check=check)
+                                    if reaction13[0].emoji == '🇳':
+                                        await message.remove_reaction('🇾', member=z0diac.user)
+                                        message = await ctx.message.author.send("Your umbrella role is... **Classical Liberal**. If you have more questions or a more specific ideology to add, please DM Dakota.")
+                                    if reaction13[0].emoji == '🇾':
+                                        await message.remove_reaction('🇳', member=z0diac.user)
+                                        message = await ctx.message.author.send("Your umbrella role is... **Theologue**. Your subrole is... **Theodemocrat**. If you have more questions or a more specific ideology to add, please DM Dakota.")
+                                if reaction12[0].emoji == '🇾':
+                                    await message.remove_reaction('🇳', member=z0diac.user)
+                                    message = await ctx.message.author.send("Your umbrella role is... **Classical Liberal**. Your subrole is... **Modernist**. If you have more questions or a more specific ideology to add, please DM Dakota.")
+                    if reaction7[0].emoji == '🇳':
+                        await message.remove_reaction('🇾', member=z0diac.user)
+                        message = await ctx.message.author.send("**Question 4:**\nDo you support companies being able to enforce political correctness upon their employees? (Y for yes, and N for no.)")
+                        await message.add_reaction('🇾')
+                        await message.add_reaction('🇳')
+                        def check(reaction, user):
+                            return reaction.count == 2
+                        reaction18 = await z0diac.wait_for('reaction_add', check=check)
+                        if reaction18[0].emoji == '🇾':
+                            await message.remove_reaction('🇳', member=z0diac.user)
+                            message = await ctx.message.author.send("**Question 5:**\nDo you support the government being involved in pushing social justice? (Y for yes, and N for no.)")
+                            await message.add_reaction('🇾')
+                            await message.add_reaction('🇳')
+                            def check(reaction, user):
+                                return reaction.count == 2
+                            reaction19 = await z0diac.wait_for('reaction_add', check=check)
+                            if reaction19[0].emoji == '🇾':
+                                await message.remove_reaction('🇳', member=z0diac.user)
+                                message = await ctx.message.author.send("**Question 6:**\nShould the government take an active role in being the dealer of economic justice? (Y for yes, and N for no.)")
+                                await message.add_reaction('🇾')
+                                await message.add_reaction('🇳')
+                                def check(reaction, user):
+                                    return reaction.count == 2
+                                reaction22 = await z0diac.wait_for('reaction_add', check=check)
+                                if reaction22[0].emoji == '🇾':
+                                    await message.remove_reaction('🇳', member=z0diac.user)
+                                    message = await ctx.message.author.send("Your umbrella role is... **Social Democracy**. Your subrole is... **Paternalistic Progressivism**. If you have more questions or a more specific ideology to add, please DM Dakota.")
+                                if reaction22[0].emoji == '🇳':
+                                    await message.remove_reaction('🇾', member=z0diac.user)
+                                    message = await ctx.message.author.send("**Question 7**\nShould we fully embrace the international community, even in times where it does not directly benefit us?")
+                                    await message.add_reaction('🇾')
+                                    await message.add_reaction('🇳')
+                                    def check(reaction, user):
+                                        return reaction.count == 2
+                                    reaction23 = await z0diac.wait_for('reaction_add', check=check)
+                                    if reaction23[0].emoji == '🇾':
+                                        await message.remove_reaction('🇳', member=z0diac.user)
+                                        message = await ctx.message.author.send("**Question 8:** Is it western society's job to act as policeman of the rest of the world?")
+                                        await message.add_reaction('🇾')
+                                        await message.add_reaction('🇳')
+                                    if reaction23[0].emoji == '🇳':
+                                        await message.remove_reaction('🇾', member=z0diac.user)
+                                        message = await ctx.message.author.send("Question 9: Do you believe society has to be fundamentally changed in order to progress?")
+                                        await message.add_reaction('🇾')
+                                        await message.add_reaction('🇳')
+                                        def check(reaction, user):
+                                            return reaction.count == 2
+                                        reaction24 = await z0diac.wait_for('reaction_add', check=check)
+                                        if reaction24[0].emoji == '🇾':
+                                            await message.remove_reaction('🇳', member=z0diac.user)
+                                            message = await ctx.message.author.send("**Question 10:** Can someone say for sure which entity or group should hold power?")
+                                            await message.add_reaction('🇾')
+                                            await message.add_reaction('🇳')
+                                            reaction26 = await z0diac.wait_for('reaction_add', check=check)
+                                            if reaction26[0].emoji == '🇾':
+                                                await message.remove_reaction('🇳', member=z0diac.user)
+                                                message = await ctx.message.author.send("Your umbrella role is... **Centrist**. Your subrole is... **Technocratic Liberal**. If you have more questions or a more specific ideology to add, please DM Dakota.")
+                                            if reaction26[0].emoji == '🇳':
+                                                await message.remove_reaction('🇾', member=z0diac.user)
+                                                message = await ctx.message.author.send("Your umbrella role is... **Centrist**. Your subrole is... **Radical Pluralist**. If you have more questions or a more specific ideology to add, please DM Dakota.")
+                                        if reaction24[0].emoji == '🇳':
+                                            await message.remove_reaction('🇾', member=z0diac.user)
+                                            message = await ctx.message.author.send("Your umbrella role is... **Centrist**. Your subrole is... **Ordoliberal**. If you have more questions or a more specific ideology to add, please DM Dakota.")
+                            if reaction19[0].emoji == '🇳':
+                                await message.remove_reaction('🇾', member=z0diac.user)
+                                await message.remove_reaction('🇾', member=z0diac.user)
+                                message = await ctx.message.author.send("Question 9: Do you believe society has to be fundamentally changed in order to progress?")
+                                await message.add_reaction('🇾')
+                                await message.add_reaction('🇳')
+                                def check(reaction, user):
+                                    return reaction.count == 2
+                                reaction29 = await z0diac.wait_for('reaction_add', check=check)
+                                if reaction29[0].emoji == '🇾':
+                                    await message.remove_reaction('🇳', member=z0diac.user)
+                                    message = await ctx.message.author.send("**Question 10:** Can someone say for sure which entity or group should hold power?")
+                                    await message.add_reaction('🇾')
+                                    await message.add_reaction('🇳')
+                                    reaction30 = await z0diac.wait_for('reaction_add', check=check)
+                                    if reaction30[0].emoji == '🇾':
+                                        await message.remove_reaction('🇳', member=z0diac.user)
+                                        message = await ctx.message.author.send("Your umbrella role is... **Centrist**. Your subrole is... **Technocratic Centrist**. If you have more questions or a more specific ideology to add, please DM Dakota.")
+                                    if reaction30[0].emoji == '🇳':
+                                        await message.remove_reaction('🇾', member=z0diac.user)
+                                        message = await ctx.message.author.send("Your umbrella role is **Centrist**. Your subrole is... **Radical Pluralist**. If you have more questions or a more specific ideology to add, please DM Dakota.")
+                                if reaction29[0].emoji == '🇳':
+                                    await message.remove_reaction('🇾', member=z0diac.user)
+                                    message = await ctx.message.author.send("Your umbrella role is... **Centrist**. Your subrole is... **Ordoliberal**. If you have more questions or a more specific ideology to add, please DM Dakota.")
+                        if reaction18[0].emoji == '🇳':
+                            await message.remove_reaction('🇾', member=z0diac.user)
+                            message = await ctx.message.author.send("**Question 5:**\nDo you believe in upholding tradition at the expense of social liberty? (Y for yes, and N for no.)")
+                            await message.add_reaction('🇾')
+                            await message.add_reaction('🇳')
+                            def check(reaction, user):
+                                return reaction.count == 2
+                            reaction28 = await z0diac.wait_for('reaction_add', check=check)
+                            if reaction28[0].emoji == '🇾':
+                                await message.remove_reaction('🇳', member=z0diac.user)
+                                message = await ctx.message.author.send("Your umbrella role is either... **Paternalist or Theologue**. Your subrole is... **Paternalistic Theodemocrat**. If you have more questions or a more specific ideology to add, please DM Dakota.")
+                            if reaction28[0].emoji == '🇳':
+                                await message.remove_reaction('🇾', member=z0diac.user)
+                                message = await ctx.message.author.send("Your umbrella role is... **Green**. Your subrole is... **Cultural Libertarian**. If you have more questions or a more specific ideology to add, please DM Dakota.")
+                if reaction3[0].emoji == '🇳':
+                    await message.remove_reaction('🇾', member=z0diac.user)
+                    message = await ctx.message.author.send("**Question 3:**\nDo you believe government should be controlled by the strongest/smartest/best? (Y for yes, and N for no.)")
+                    await message.add_reaction('🇾')
+                    await message.add_reaction('🇳')
+                    def check(reaction, user):
+                        return reaction.count == 2
+                    reaction32 = await z0diac.wait_for('reaction_add', check=check)
+                    if reaction32[0].emoji == '🇾':
+                        await message.remove_reaction('🇳', member=z0diac.user)
+                        message = await ctx.message.author.send("**Question 4:**\nDo you see your ethnicity as the greatest?")
+                        await message.add_reaction('🇾')
+                        await message.add_reaction('🇳')
+                        def check(reaction, user):
+                            return reaction.count == 2
+                        reaction34 = await z0diac.wait_for('reaction_add', check=check)
+                        if reaction34[0].emoji == '🇾':
+                            await message.remove_reaction('🇳', member=z0diac.user)
+                            message = await ctx.message.author.send("Your umbrella role is... **Autocrat**. Your subrole is... **Ethnonationalist**. If you have more questions or a more specific ideology to add, please DM Dakota.")
+                        if reaction34[0].emoji == '🇳':
+                            await message.remove_reaction('🇾', member=z0diac.user)
+                            message = await ctx.message.author.send("**Question 5:**\nIs it justifiable to impose your religion onto others using the state?")
+                            await message.add_reaction('🇾')
+                            await message.add_reaction('🇳')
+                            def check(reaction, user):
+                                return reaction.count == 2
+                            reaction34 = await z0diac.wait_for('reaction_add', check=check)
+                            if reaction34[0].emoji == '🇾':
+                                await message.remove_reaction('🇳', member=z0diac.user)
+                                message = await ctx.message.author.send("Your umbrella role is... **Theologue**. Your subrole is... **Theocrat**. If you have more questions or a more specific ideology to add, please DM Dakota.")
+                            if reaction34[0].emoji == '🇳':
+                                await message.remove_reaction('🇾', member=z0diac.user)
+                                message = await ctx.message.author.send("**Question 6:**\nAre philosophers or other wise men the only ones capable of properly ruling the people?")
+                                await message.add_reaction('🇾')
+                                await message.add_reaction('🇳')
+                                def check(reaction, user):
+                                    return reaction.count == 2
+                                reaction36 = await z0diac.wait_for('reaction_add', check=check)
+                                if reaction36[0].emoji == '🇾':
+                                    await message.remove_reaction('🇳', member=z0diac.user)
+                                    message = await ctx.message.author.send("Your umbrella role is... **Autocrat**. Your subrole is... **Noocrat**. If you have more questions or a more specific ideology to add, please DM Dakota.")
+                                if reaction36[0].emoji == '🇳':
+                                    await message.remove_reaction('🇾', member=z0diac.user)
+                                    message = await ctx.message.author.send("Your umbrella role is... **Autocrat**. Your subrole is... **Monarchist**. If you have more questions or a more specific ideology to add, please DM Dakota.")
+                                    await message.add_reaction('🇾')
+                                    await message.add_reaction('🇳')
+                    if reaction32[0].emoji == '🇳':
+                        await message.remove_reaction('🇾', member=z0diac.user)
+                        message = await ctx.message.author.send("**Question 4:**\nShould the government serve the working class over the private sector?")
+                        await message.add_reaction('🇾')
+                        await message.add_reaction('🇳')
+                        def check(reaction, user):
+                            return reaction.count == 2
+                        reaction33 = await z0diac.wait_for('reaction_add', check=check)
+                        if reaction33[0].emoji == '🇾':
+                            await message.remove_reaction('🇳', member=z0diac.user)
+                            message = await ctx.message.author.send("Your umbrella role is... **Autocrat**. Your subrole is... **Marxist-Leninist**. If you have more questions or a more specific ideology to add, please DM Dakota.")
+                        if reaction33[0].emoji == '🇳':
+                            await message.remove_reaction('🇾', member=z0diac.user)
+                            message = await ctx.message.author.send("Your umbrella role is... **Autocrat**. Your subrole is... **National Capitalist**. If you have more questions or a more specific ideology to add, please DM Dakota.")
             if reaction2[0].emoji == '🇳':
+                await message_3.remove_reaction('🇾', member=z0diac.user)
                 message = await ctx.message.author.send("**Question 2:**\nDo you believe in abolishing the concept of owning private property? (Y for yes, and N for no.)")
                 await message.add_reaction('🇾')
                 await message.add_reaction('🇳')
                 def check(reaction, user):
                     return reaction.count == 2
-                reaction2 = await z0diac.wait_for('reaction_add', check=check)
-                if reaction2[0].emoji == '🇾':
-                    message = await ctx.message.author.send( "**Question 3:**\nDo you believe said government should be in charge of the market? (Y for yes, and N for no.)")
+                reaction4 = await z0diac.wait_for('reaction_add', check=check)
+                if reaction4[0].emoji == '🇾':
+                    await message.remove_reaction('🇳', member=z0diac.user)
+                    message = await ctx.message.author.send( "**Question 3:**\nDo you believe revolution needs to be immediate? (Y for yes, and N for no.)")
                     await message.add_reaction('🇾')
                     await message.add_reaction('🇳')
+                    def check(reaction, user):
+                        return reaction.count == 2
+                    reaction5 = await z0diac.wait_for('reaction_add', check=check)
+                    if reaction5[0].emoji == '🇾':
+                        await message.remove_reaction('🇳', member=z0diac.user)
+                        message = await ctx.message.author.send("Your umbrella role is... **Libertarian Socialist**. Your subrole is... **Anarchocommunist**. If you have more questions or a more specific ideology to add, please DM Dakota.")
+                    if reaction5[0].emoji == '🇳':
+                        await message.remove_reaction('🇾', member=z0diac.user)
+                        message = await ctx.message.author.send("**Question 4:**\nIs revolution by working within the democratic system impossible?")
+                        await message.add_reaction('🇾')
+                        await message.add_reaction('🇳')
+                        def check(reaction, user):
+                            return reaction.count == 2
+                        reaction5 = await z0diac.wait_for('reaction_add', check=check)
+                        if reaction5[0].emoji == '🇾':
+                            await message.remove_reaction('🇳', member=z0diac.user)
+                            message = await ctx.message.author.send("Your umbrella role is... **Socialist.** Your subrole is... **Marxist** If you have more questions or a more specific ideology to add, please DM Dakota.")
+                        if reaction5[0].emoji == '🇳':
+                            await message.remove_reaction('🇾', member=z0diac.user)
+                            message = await ctx.message.author.send("Your umbrella role is... **Socialist**. Your subrole is... **Democratic Socialist.** If you have more questions or a more specific ideology to add, please DM Dakota.**")
         elif label == "bigdab" or label == "bigDab" or label == "big dab":
             await ctx.channel.send("bigdab is a shop item that allows you to post a full-sized dab instead of a tiny emote. This item costs you 10 EP.")
         elif label == "renamefuco" or label == "renameFuCo" or label == "rename FuCo":
@@ -127,25 +406,57 @@ async def whatis(ctx):
 
 @z0diac.event
 async def on_raw_reaction_add(reaction, message, channel, reacter):
-    #umbrella_roles = {discord.utils.get(message.guild.roles, id=420735827023495169)}
-    if discord.utils.get(z0diac.get_all_channels(),id=420061566331781121).get_message(448475971553591300) == discord.utils.get(z0diac.get_all_channels(),id=420061566331781121).get_message(message):
-        if reaction == 448475108290592769:
-            await discord.utils.get(z0diac.get_all_members(), id=reacter).add_role(443242847681118218)
+    umbrella_roles = {discord.utils.get(message.guild.roles, id=420735827023495169)}
+    if 448475971553591300 == message:
+        if str(reaction) == 448477016430215169:
+            await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_channel(channel).guild.roles, id=443242847681118218))
             await discord.utils.get(z0diac.get_all_members(), id=reacter).send('You have been given the ' + discord.utils.get(message.guild.roles, id=443242847681118218) + ' role.')
-    elif discord.utils.get(z0diac.get_all_channels(), id=420061566331781121).get_message(448476172343574528) == discord.utils.get(z0diac.get_all_channels(),id=420061566331781121).get_message(message):
-        if str(reaction) == '1⃣':
-            await discord.utils.get(z0diac.get_all_members(), id=reacter).add_role(381176934131957760)
-            await reacter.send('You have been given the ' + discord.utils.get(message.guild.roles, id=381176934131957760) + ' role.')
-            await reacter.add_roles(discord.utils.get(channel.guild.roles, id=409483695582478348))
-            await reacter.send('You are no longer in open-debate and now have access to lounge!')
-    elif discord.utils.get(z0diac.get_all_channels(), id=420061566331781121).get_message(448476403638206474) == discord.utils.get(z0diac.get_all_channels(),id=420061566331781121).get_message(message):
-        if str(reaction) == '1⃣':
-            print('ye')
+        elif str(reaction) == 448477539233431563:
+            await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_channel(channel).guild.roles, id=381178125591117827))
+            await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(message.guild.roles, id=381178125591117827) + ' role.')
+        elif str(reaction) == 448477746138578944:
+            await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_channel(channel).guild.roles, id=382557327892676619))
+            await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(message.guild.roles, id=382557327892676619) + ' role.')
+        elif str(reaction) == 448475108290592769:
+            await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_channel(channel).guild.roles, id=420735827023495169))
+            await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(message.guild.roles, id=420735827023495169) + ' role.')
+    elif 448476172343574528 == message:
+        if str(reaction) == 448479331220455434:
+            await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_channel(channel).guild.roles, id=381176934131957760))
+            await discord.utils.get(z0diac.get_all_members(), id=reacter).send('You have been given the ' + discord.utils.get(message.guild.roles, id=381176934131957760) + ' role.')
+        elif str(reaction) == 448479501018464256:
+            await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_channel(channel).guild.roles, id=381177002033676298))
+            await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(message.guild.roles, id=381176934131957760) + ' role.')
+        elif str(reaction) == 409124661272641536:
+            await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_channel(channel).guild.roles, id=409124661272641536))
+            await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(message.guild.roles, id=409124661272641536) + ' role.')
+        elif str(reaction) == 448479894725459968:
+            await z0diac.get_guild(448479686511689728).get_member(reacter).add_roles(discord.utils.get(z0diac.get_channel(channel).guild.roles, id=381176967631863810))
+            await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(message.guild.roles, id=381176967631863810) + ' role.')
+    elif 448476172343574528 == message:
+        if str(reaction) == 448478321743888406:
+            await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_channel(channel).guild.roles, id=427819576882102273))
+            await discord.utils.get(z0diac.get_all_members(), id=reacter).send('You have been given the ' + discord.utils.get(message.guild.roles, id=427819576882102273) + ' role.')
+        elif str(reaction) == 448478811076427786:
+            await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_channel(channel).guild.roles, id=381177029464293386))
+            await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(message.guild.roles, id=381177029464293386) + ' role.')
+        elif str(reaction) == 448478542444101643:
+            await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_channel(channel).guild.roles, id=381177107616759810))
+            await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(message.guild.roles, id=381177107616759810) + ' role.')
+        elif str(reaction) == 448478976252444673:
+            await z0diac.get_guild(448479686511689728).get_member(reacter).add_roles(discord.utils.get(z0diac.get_channel(channel).guild.roles, id=416369684179320834))
+            await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(message.guild.roles, id=381176967631863810) + ' role.')
+        elif str(reaction) == 448478976252444673:
+            await z0diac.get_guild(448479686511689728).get_member(reacter).add_roles(discord.utils.get(z0diac.get_channel(channel).guild.roles, id=424645022927945736))
+            await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(message.guild.roles, id=381176967631863810) + ' role.')
+    elif 448486263608049666 == message:
+        await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_channel(channel).guild.roles, id=448486263608049666))
+        await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(message.guild.roles, id=448486263608049666) + ' role.')
     elif str(reaction) == '📌' or str(reaction) == '📍':
-        x = await discord.utils.get(z0diac.get_all_channels(), id=channel).get_message(message)
-        embed = discord.Embed(title=(x.author.display_name + " (" + x.created_at.strftime("%Y-%m-%d %H:%M:%S") + ")"), color=x.author.color, description=x.content)
-        embed.set_thumbnail(url=x.author.avatar_url)
-        await z0diac.get_channel(446400765775314947).send(embed=embed)
+            x = await discord.utils.get(z0diac.get_all_channels(), id=channel).get_message(message)
+            embed = discord.Embed(title=(x.author.display_name + " (" + x.created_at.strftime("%Y-%m-%d %H:%M:%S") + ")"), color=x.author.color, description=x.content)
+            embed.set_thumbnail(url=x.author.avatar_url)
+            await z0diac.get_channel(446400765775314947).send(embed=embed)
     else:
         print('Fail')
 
