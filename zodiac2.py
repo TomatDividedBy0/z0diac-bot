@@ -149,9 +149,9 @@ async def whatis(ctx):
             embed.add_field(name="**Members:**", value=str(len(discord.utils.get(ctx.guild.roles, id=409124661272641536).members)))
             embed.add_field(name="**Description:**", value="Theologues are socially conservative, but vary widely on their economic policies. This includes Distributists, Christian Democrats, and right-theologues. Their main deciding factor in voting is their religion.")
             message = await ctx.channel.send(embed=embed)
-        elif label == "Autocrat" or label == "autocrat":
+        elif label == "Third Positioner" or label == "Third Positioner":
             embed = discord.Embed(color=discord.utils.get(ctx.guild.roles, id=448633320431943682).color)
-            embed.set_author(name="Autocrat", icon_url=z0diac.get_emoji(448636465417814026).url)
+            embed.set_author(name="Third Positioner", icon_url=z0diac.get_emoji(448636465417814026).url)
             embed.add_field(name="**Type:**", value="Umbrella Role")
             embed.add_field(name="**Wing:**", value="Center")
             embed.add_field(name="**Representative:**", value="Militaristic Cezar#6488")
@@ -163,11 +163,24 @@ async def whatis(ctx):
             embed.set_author(name="Effort Points Shop")
             message = await ctx.channel.send(embed=embed)
         elif label == "specs" or label == "Specs" or label == "yourspecs" or label== "your specs":
-            await ctx.channel.send('**CPU:** Opteron 3365\n**GPU:** Radeon R7 360\n**HDD:** 320GB HDD\n**RAM:** 8GB DDR3\n**OS:** Kubuntu')
+            embed = discord.Embed(color=ctx.guild.get_member(383385198534066187).color)
+            embed.set_author(name="z0diac-bot's Specs", icon_url=ctx.guild.get_member(383385198534066187).avatar_url)
+            embed.add_field(name="**CPU:**", value="Opteron 3365")
+            embed.add_field(name="**GPU:**", value="Radeon R7 360")
+            embed.add_field(name="**HDD:**", value="320GB HDD")
+            embed.add_field(name="**RAM:**", value='8GB DDR3')
+            embed.add_field(name="**OS:**", value="Kubuntu")
+            message = await ctx.channel.send(embed=embed)
         elif label == "myBalance" or label == "mybalance" or label == "my balance":
             with open("dictionary.json", 'r') as f:
                 repkey = json.load(f)
-                await ctx.send(str(ctx.message.author.name) + " has " + str(repkey.get(str(ctx.message.author.id))) + ' Effort Points.')
+            with open("dp.json", "r") as file:
+                dpkey = json.load(file)
+            embed = discord.Embed(color=ctx.message.author.color)
+            embed.set_author(name=(ctx.message.author.display_name + "'s Balance" ), icon_url=ctx.message.author.avatar_url)
+            embed.add_field(name="**Daily Points:**", value=(str(dpkey.get(str(ctx.message.author.id)))))
+            embed.add_field(name="**Effort Points:**", value=str(repkey.get(str(ctx.message.author.id))))
+            message = await ctx.channel.send(embed=embed)
         elif label == "myideology" or label == "my ideology" or label == "myIdeology":
             await ctx.message.delete()
             message_to = await ctx.message.author.send("Welcome to the official compact edition of the PWH political test. \nYou will be asked various questions on your values to determine your ideology. You will be presented with either a yes or a no option. Simply click the corresponding button to answer said question. To begin, click the green check mark.")
@@ -418,7 +431,7 @@ async def whatis(ctx):
                         reaction34 = await z0diac.wait_for('reaction_add', check=check)
                         if reaction34[0].emoji == '🇾':
                             await message.remove_reaction('🇳', member=z0diac.user)
-                            message = await ctx.message.author.send("Your umbrella role is... **Autocrat**. Your subrole is... **Ethnonationalist**. If you have more questions or a more specific ideology to add, please DM Dakota.")
+                            message = await ctx.message.author.send("Your umbrella role is... **Third Positioner**. Your subrole is... **National Socialist**. If you have more questions or a more specific ideology to add, please DM Dakota.")
                         if reaction34[0].emoji == '🇳':
                             await message.remove_reaction('🇾', member=z0diac.user)
                             message = await ctx.message.author.send("**Question 5:**\nIs it justifiable to impose your religion onto others using the state?")
@@ -440,10 +453,10 @@ async def whatis(ctx):
                                 reaction36 = await z0diac.wait_for('reaction_add', check=check)
                                 if reaction36[0].emoji == '🇾':
                                     await message.remove_reaction('🇳', member=z0diac.user)
-                                    message = await ctx.message.author.send("Your umbrella role is... **Autocrat**. Your subrole is... **Noocrat**. If you have more questions or a more specific ideology to add, please DM Dakota.")
+                                    message = await ctx.message.author.send("Your umbrella role is... **Third Positioner**. Your subrole is... **Noocrat**. If you have more questions or a more specific ideology to add, please DM Dakota.")
                                 if reaction36[0].emoji == '🇳':
                                     await message.remove_reaction('🇾', member=z0diac.user)
-                                    message = await ctx.message.author.send("Your umbrella role is... **Autocrat**. Your subrole is... **Monarchist**. If you have more questions or a more specific ideology to add, please DM Dakota.")
+                                    message = await ctx.message.author.send("Your umbrella role is... **Third Positioner**. Your subrole is... **Monarchist**. If you have more questions or a more specific ideology to add, please DM Dakota.")
                                     await message.add_reaction('🇾')
                                     await message.add_reaction('🇳')
                     if reaction32[0].emoji == '🇳':
@@ -464,13 +477,13 @@ async def whatis(ctx):
                             reaction41 = await z0diac.wait_for('reaction_add', check=check)
                             if reaction41[0].emoji == '🇾':
                                 await message.remove_reaction('🇳', member=z0diac.user)
-                                message = await ctx.message.author.send("Your umbrella role is... **Autocrat**. Your subrole is... **Marxist-Leninist**. If you have more questions or a more specific ideology to add, please DM Dakota.")
+                                message = await ctx.message.author.send("Your umbrella role is... **Third Positioner**. Your subrole is... **Marxist-Leninist**. If you have more questions or a more specific ideology to add, please DM Dakota.")
                             if reaction41[0].emoji == '🇳':
                                 await message.remove_reaction('🇾', member=z0diac.user)
                                 message = await ctx.message.author.send("to add, p")
                         if reaction33[0].emoji == '🇳':
                             await message.remove_reaction('🇾', member=z0diac.user)
-                            message = await ctx.message.author.send("Your umbrella role is... **Autocrat**. Your subrole is... **National Capitalist**. If you have more questions or a more specific ideology to add, please DM Dakota.")
+                            message = await ctx.message.author.send("Your umbrella role is... **Third Positioner**. Your subrole is... **National Capitalist**. If you have more questions or a more specific ideology to add, please DM Dakota.")
             if reaction2[0].emoji == '🇳':
                 await message_3.remove_reaction('🇾', member=z0diac.user)
                 message = await ctx.message.author.send("**Question 2:**\nDo you believe in abolishing the concept of owning private property? (Y for yes, and N for no.)")
@@ -706,6 +719,18 @@ async def buy(ctx):
                     await ctx.channel.send('You have been given the' + ctx.message.content[12:] + ' role.')
                 else:
                     await ctx.channel.send('You need 70 EP to do that!')
+            elif ctx.message.content[5:15] == 'memberplus':
+                dollar_amount = 200
+                print('Pass')
+                if currentvalue_customer - dollar_amount >= 0:
+                    repkey[str(ctx.message.author.id)] = currentvalue_customer - dollar_amount
+                    f.seek(0)
+                    json.dump(repkey, f)
+                    f.truncate()
+                    await ctx.message.author.add_roles(discord.utils.get(ctx.guild.roles,id=450414068742750208))
+                    await z0diac.get_channel(450476263270776842).send("<@&433012201423634442>, please vet " + ctx.message.author.display_name + " in this channel. If you have any questions with the process, PM Dakota.")
+                else:
+                   await ctx.message.author.send('You cannot afford that!')
             elif ctx.message.content[5:10] == 'topic':
                 check = commands.has_role(discord.utils.get(ctx.guild.roles, id=448902429275324427))
                 if check is True:
@@ -734,8 +759,7 @@ async def buy(ctx):
                         if ctx.message.raw_mentions[0] != ctx.message.author.id:
                             if currentvalue_giver - int(ctx.message.content[dollar_amount:]) >= 0:
                                 if int(ctx.message.content[dollar_amount:]) > 0:
-                                    repkey[str(ctx.message.author.id)] = (
-                                    currentvalue_giver - int(ctx.message.content[dollar_amount:]))
+                                    repkey[str(ctx.message.author.id)] = (currentvalue_giver - int(ctx.message.content[dollar_amount:]))
                                     f.seek(0)
                                     json.dump(repkey, f)
                                     f.truncate()
@@ -756,6 +780,37 @@ async def buy(ctx):
                             await ctx.channel.send("Nice try, but you can't give yourself cash.")
                 except IndexError or ValueError:
                     await ctx.channel.send('Something went wrong, remember to format your message as: /buy gift [mentioned person] [number].')
+            elif ctx.message.content[5:11] == 'dpgift':
+                try:
+                    with open("dp.json", 'r+') as f:
+                        repkey = json.load(f)
+                        currentvalue_recipient = repkey.get(str(ctx.message.raw_mentions[0]))
+                        currentvalue_giver = repkey.get(str(ctx.message.author.id))
+                        dollar_amount = ctx.message.content.find('>') + 1
+                        if ctx.message.raw_mentions[0] != ctx.message.author.id:
+                            if currentvalue_giver - int(ctx.message.content[dollar_amount:]) >= 0:
+                                if int(ctx.message.content[dollar_amount:]) > 0:
+                                    repkey[str(ctx.message.author.id)] = (currentvalue_giver - int(ctx.message.content[dollar_amount:]))
+                                    f.seek(0)
+                                    json.dump(repkey, f)
+                                    f.truncate()
+                                    with open("dictionary.json", 'r+') as file:
+                                        repkey2 = json.load(file)
+                                        repkey2[str(ctx.message.raw_mentions[0])] = (
+                                        currentvalue_recipient + int(ctx.message.content[dollar_amount:]))
+                                        file.seek(0)
+                                        json.dump(repkey2, file)
+                                        file.truncate()
+                                    payment = ctx.message.content[(ctx.message.content.find('>') + 1):]
+                                    await ctx.channel.send( 'You have successfully gifted ' + (str(ctx.message.mentions[0]))[:-5] + payment + ' Daily Points.')
+                                else:
+                                    await ctx.channel.send('Gifts must be a positive number, nice try.')
+                            else:
+                                print('You cannot afford that!')
+                        else:
+                            await ctx.channel.send("Nice try, but you can't give yourself cash.")
+                except IndexError or ValueError:
+                    await ctx.channel.send('Something went wrong, remember to format your message as: /buy dpgift [mentioned person] [number].')
                     traceback.print_exc()
 
 
@@ -769,5 +824,36 @@ async def vote(ctx):
 @z0diac.command()
 async def optinlounge(ctx):
     await ctx.message.author.add_roles(discord.utils.get(ctx.guild.roles,id=447429561366478849))
+    await ctx.message.author.send('You have been opted into lounge!')
 
-z0diac.run("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+@z0diac.event
+async def on_message(message):
+    if message.channel == z0diac.get_channel(450415484832186369):
+        with open("dp.json", 'r+') as f:
+            repkey = json.load(f)
+            currentvalue_customer = repkey.get(str(message.author.id))
+            dollar_amount = 2
+            if currentvalue_customer - dollar_amount >= 0:
+                repkey[str(message.author.id)] = currentvalue_customer - dollar_amount
+                f.seek(0)
+                json.dump(repkey, f)
+                f.truncate()
+            else:
+                await message.delete()
+                await message.author.send('You ran out of Daily Points. Your Daily points will refill tomorrow, but you can earn more trading your EP for DP with other members. Do `/whatis earnEP` to find out more.')
+    await z0diac.process_commands(message)
+
+@z0diac.command()
+async def refill(ctx):
+    if ctx.message.author.id == 176160436331216896:
+        with open("dp.json", "r+") as f:
+            dpkey = json.load(f)
+            keys = list(dpkey.keys())
+            for x in keys:
+                print(x)
+                dpkey[x] = 144
+                f.seek(0)
+                json.dump(dpkey, f)
+                f.truncate()
+        await ctx.message.channel.send("You have successfully refilled everyone's Daily Points")
+z0diac.run("MzgzMzg1MTk4NTM0MDY2MTg3.DeSjjg.UTV6BKxXzMrqIVmgMDahKsfZDzs")
