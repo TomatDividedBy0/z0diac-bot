@@ -27,10 +27,11 @@
       <file leaf-file-name="zodiac2.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/zodiac2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="590" column="29" lean-forward="true" selection-start-line="590" selection-start-column="29" selection-end-line="590" selection-end-column="29" />
+            <state relative-caret-position="96">
+              <caret line="427" column="43" lean-forward="true" selection-start-line="427" selection-start-column="43" selection-end-line="427" selection-end-column="43" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
+                <element signature="e#591#39779#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -236,7 +237,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36815417" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36815417" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -256,7 +257,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="12" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -385,14 +386,6 @@
     <entry file="file://$PROJECT_DIR$/whoreppedwho.json" />
     <entry file="file://$PROJECT_DIR$/2animals1tomat0.py" />
     <entry file="file://$PROJECT_DIR$/main.py" />
-    <entry file="file://$PROJECT_DIR$/dictionary.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="893" lean-forward="false" selection-start-line="0" selection-start-column="893" selection-end-line="0" selection-end-column="893" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admincommands.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="249">
@@ -411,12 +404,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dictionary.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="893" lean-forward="false" selection-start-line="0" selection-start-column="893" selection-end-line="0" selection-end-column="893" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/zodiac2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="590" column="29" lean-forward="true" selection-start-line="590" selection-start-column="29" selection-end-line="590" selection-end-column="29" />
+        <state relative-caret-position="96">
+          <caret line="427" column="43" lean-forward="true" selection-start-line="427" selection-start-column="43" selection-end-line="427" selection-end-column="43" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#591#39779#0" expanded="false" />
           </folding>
         </state>
       </provider>
