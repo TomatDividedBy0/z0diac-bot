@@ -770,4 +770,4 @@ async def vote(ctx):
 async def optinlounge(ctx):
     await ctx.message.author.add_roles(discord.utils.get(ctx.guild.roles,id=447429561366478849))
 
-z0diac.run("MzgzMzg1MTk4NTM0MDY2MTg3.DeSjjg.UTV6BKxXzMrqIVmgMDahKsfZDzs")
+z0diac.run("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
