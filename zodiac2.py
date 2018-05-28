@@ -856,4 +856,4 @@ async def refill(ctx):
                 json.dump(dpkey, f)
                 f.truncate()
         await ctx.message.channel.send("You have successfully refilled everyone's Daily Points")
-z0diac.run("MzgzMzg1MTk4NTM0MDY2MTg3.DeSjjg.UTV6BKxXzMrqIVmgMDahKsfZDzs")
+z0diac.run(XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
