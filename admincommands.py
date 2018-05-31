@@ -39,25 +39,26 @@ async def archive(ctx):
 @z0diac.command()
 async def getunicode(ctx):
     print(ctx.message.content)
-    message1 = await z0diac.get_channel(420061566331781121).get_message(448475971553591300)
+    message1 = await z0diac.get_channel(451557947194212362).get_message(451558090727358495)
     await message1.add_reaction(z0diac.get_emoji(448475108290592769))
     await message1.add_reaction(z0diac.get_emoji(448477016430215169))
     await message1.add_reaction(z0diac.get_emoji(448477539233431563))
     await message1.add_reaction(z0diac.get_emoji(448477746138578944))
-    message2 = await z0diac.get_channel(420061566331781121).get_message(448476172343574528)
+    await message1.add_reaction(z0diac.get_emoji(448636465417814026))
+    message2 = await z0diac.get_channel(451557947194212362).get_message(451558008787566593)
     await message2.add_reaction(z0diac.get_emoji(448479894725459968))
     await message2.add_reaction(z0diac.get_emoji(448479501018464256))
     await message2.add_reaction(z0diac.get_emoji(448479331220455434))
     await message2.add_reaction(z0diac.get_emoji(448479686511689728))
-    message3 = await z0diac.get_channel(420061566331781121).get_message(448476403638206474)
+    message3 = await z0diac.get_channel(451557947194212362).get_message(451558134784196611)
     await message3.add_reaction(z0diac.get_emoji(448478006747332608))
     await message3.add_reaction(z0diac.get_emoji(448478811076427786))
     await message3.add_reaction(z0diac.get_emoji(448478542444101643))
     await message3.add_reaction(z0diac.get_emoji(448478811076427786))
     await message3.add_reaction(z0diac.get_emoji(448478976252444673))
     await message3.add_reaction(z0diac.get_emoji(448478321743888406))
-
-
+    message4 = await z0diac.get_channel(451557947194212362).get_message(451558174965760000)
+    await message4.add_reaction(z0diac.get_emoji(448485954462679060))
 
 
 z0diac.run("MzgzMzg1MTk4NTM0MDY2MTg3.DeSjjg.UTV6BKxXzMrqIVmgMDahKsfZDzs")

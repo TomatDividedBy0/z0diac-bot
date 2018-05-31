@@ -580,6 +580,26 @@ async def whatis(ctx):
             embed.add_field(name="**Status:**", value="TBA")
             embed.add_field(name="**Description:**", value="Omega Debate is a channel where each message you send is taxed with 2 DP, forcing you to use your messages wisely. Getting a message pinned by a representative will net you 10 EP.")
             message = await ctx.channel.send(embed=embed)
+        elif label == "jobs":
+            embed = discord.Embed()
+            embed.set_author(name="Job Postings")
+            embed.add_field(name="**Contributor:**", value="The fastest way to earn EP. Write quality messages that get pinned, do filibusters and formal debates. This will also reflect on your record, increasing the chances of your serious-debate application getting accepted.")
+            embed.add_field(name="**Developer:**", value="Work on developing the Reaganator 3000. Get paid in EP for each commit and be able to play a part in the structural development of the server.")
+            embed.add_field(name="**Podcast:**", value="Be a guest or assistant on the weekly PWH podcast, and get paid in EP each week you're present.")
+            embed.add_field(name="**Legislator:**", value="Challenge your incumbent Co-Governor to a special election, and if you win, you'll be able to work on managing your wing channels and get paid per vote/bill created.")
+            embed.add_field(name="**Private Attorney:**", value="Take on cases and get paid by your client for your efforts.")
+            embed.add_field(name="**Volunteer:**", value="Help out people who need help in #personal-help; you must be able to demonstrate your ability, but you will be paid in EP by the server depending on client satisfaction.")
+            message = await ctx.channel.send(embed=embed)
+        elif label == "channels":
+            embed = discord.Embed()
+            embed.set_author(name="Channels")
+            embed.add_field(name="**Omega Debate**", value="omega-debate is the main channel, where your ability to discuss is purposefully limited by your Daily Points, which is reset to 144 every day. Each message costs 2 DP, so talk wisely. If you run out before the day is done, you can trade your EP for DP with another user or wait until the day is done.")
+            embed.add_field(name="**Peanut Gallery:**", value=" peanut-gallery is the second of the default channels, where people comment on filibusters, podcasts, court cases, legislative proceedings, and formal debates. Any other discussion is strictly prohibited but there is no statute of limitations on what you can discuss.")
+            embed.add_field(name="**Serious Debate**", value="serious-debate is much more topical and in-depth. Memeing, emojis, strawmen, mocking other's viewpoints without substance, one-liners, and blanket claims are absolutely not allowed and hinder the quality of discussion. This is more strictly moderated, however, you are free to discuss any topic. You gain access to here by participating in the other debate channels, and having high quality discussion. 200 EP plus approval from the council nets you into this channel.")
+            embed.add_field(name="**Formal Debate:**", value="formal-debate is a structured debate format for professional style debating. Do /debate [MEMBER] [TOPIC] to debate them. ")
+            embed.add_field(name="**Filibusters:**", value="filibusters  is the area for you to explain a complex topic without interruptions, and to get your point across or educate someone on a topic.")
+            embed.add_field(name="**Podcast:**", value="The podcast, run by @ The Firebird, is a weekly stream that discusses various issues proposed by the PWH community.")
+            message = await ctx.channel.send(embed=embed)
         else:
             word = ctx.message.content[7:]
             meaningobject = dictionary.meaning(word)
@@ -597,65 +617,102 @@ async def on_raw_reaction_add(reaction, message, channel, reacter):
     if reacter != z0diac.user.id:
         roles = z0diac.get_channel(channel).guild.roles
         umbrella_roles = [discord.utils.get(roles, id=420735827023495169), discord.utils.get(roles, id=443242847681118218), discord.utils.get(roles, id=381178125591117827),discord.utils.get(roles, id=382557327892676619), discord.utils.get(roles, id=420735827023495169), discord.utils.get(roles, id=381176934131957760), discord.utils.get(roles, id=381177002033676298), discord.utils.get(roles, id=409124661272641536), discord.utils.get(roles, id=381176967631863810), discord.utils.get(roles, id=448633320431943682), discord.utils.get(roles, id=381177029464293386), discord.utils.get(roles, id=427819576882102273), discord.utils.get(roles, id=381177107616759810), discord.utils.get(roles, id=416369684179320834), discord.utils.get(roles, id=424645022927945736), discord.utils.get(roles, id=409483695582478348)]
-        if 448475971553591300 == message:
-            combinedset = (umbrella_roles & discord.utils.get(z0diac.get_all_members(), id=reacter).roles)
-            await z0diac.get_guild(381170494814289922).get_member(reacter).remove_roles(combinedset)
-            if str(reaction) == 448477016430215169:
+        if 451558008787566593 == message:
+            setserver = set(umbrella_roles)
+            setuser = set(discord.utils.get(z0diac.get_all_members(), id=reacter).roles)
+            try:
+                await z0diac.get_guild(381170494814289922).get_member(reacter).remove_roles(next(iter(setuser.intersection(setserver))))
+            except:
+                pass
+            if str(reaction) == '<:socialist:448477016430215169>':
                 await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=443242847681118218))
-                await discord.utils.get(z0diac.get_all_members(), id=reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922), id=443242847681118218) + ' role.')
-            elif str(reaction) == 448477539233431563:
+                await discord.utils.get(z0diac.get_all_members(), id=reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=443242847681118218).name + ' role.')
+            elif str(reaction) == '<:social_democrat:448477539233431563>':
                 await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=381178125591117827))
-                await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=381178125591117827) + ' role.')
-            elif str(reaction) == 448477746138578944:
+                await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=381178125591117827).name + ' role.')
+            elif str(reaction) == '<:libertarian_socialist:448477746138578944>':
                 await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=382557327892676619))
-                await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=382557327892676619) + ' role.')
-            elif str(reaction) == 448475108290592769:
+                await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=382557327892676619).name + ' role.')
+            elif str(reaction) == '<:green:448475108290592769>':
                 await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=420735827023495169))
-                await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=420735827023495169) + ' role.')
-        elif 448476172343574528 == message:
-            combinedset = (set(umbrella_roles) & set(discord.utils.get(z0diac.get_all_members(), id=reacter).roles)).pop()
-            await z0diac.get_guild(381170494814289922).get_member(reacter).remove_roles(discord.utils.get(z0diac.get_guild(381170494814289922).roles, name=combinedset))
-            if str(reaction) == 448479331220455434:
-                combinedset = (set(umbrella_roles) & set(discord.utils.get(z0diac.get_all_members(), id=reacter).roles)).pop()
-                await z0diac.get_guild(381170494814289922).get_member(reacter).remove_roles(discord.utils.get(z0diac.get_guild(381170494814289922).roles, name=combinedset))
+                await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=420735827023495169).name + ' role.')
+        elif 451558090727358495 == message:
+            setserver = set(umbrella_roles)
+            setuser = set(discord.utils.get(z0diac.get_all_members(), id=reacter).roles)
+            try:
+                await z0diac.get_guild(381170494814289922).get_member(reacter).remove_roles(next(iter(setuser.intersection(setserver))))
+            except:
+                pass
+            if str(reaction) == '<:centrist:448479331220455434>':
+                combinedset = [umbrella_roles + discord.utils.get(z0diac.get_all_members(), id=reacter).roles]
                 await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=381176934131957760))
-                await discord.utils.get(z0diac.get_all_members(), id=reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=381176934131957760) + ' role.')
-            elif str(reaction) == 448479501018464256:
+                await discord.utils.get(z0diac.get_all_members(), id=reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=381176934131957760).name + ' role.')
+            elif str(reaction) == '<:neoliberal:448479501018464256>':
                 await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=381177002033676298))
-                await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=381176934131957760) + ' role.')
-            elif str(reaction) == 409124661272641536:
-                await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=409124661272641536))
-                await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=409124661272641536) + ' role.')
-            elif str(reaction) == 448479894725459968:
-                await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(roles, id=381176967631863810)
-                await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=381176967631863810) + ' role.')
-            elif str(reaction) == 448636465417814026:
+                await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=381177002033676298).name + ' role.')
+            elif str(reaction) == '<:neoconservative:448479686511689728>':
+                await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=381176967631863810))
+                await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=381176967631863810).name + ' role.')
+            elif str(reaction) == '<:theologue:448479894725459968>':
+                await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(roles, id=409124661272641536)
+                await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=409124661272641536).name + ' role.')
+            elif str(reaction) == '<:third_positioner:448636465417814026>':
                 await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=448633320431943682))
-                await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=448633320431943682) + ' role.')
-        elif 448476172343574528 == message:
-            combinedset = (set(umbrella_roles) & set(discord.utils.get(z0diac.get_all_members(), id=reacter).roles)).pop()
-            await z0diac.get_guild(381170494814289922).get_member(reacter).remove_roles(discord.utils.get(z0diac.get_guild(381170494814289922).roles, name=combinedset))
-            if str(reaction) == 448478321743888406:
+                await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=448633320431943682).name + ' role.')
+        elif 451558134784196611 == message:
+            setserver = set(umbrella_roles)
+            setuser = set(discord.utils.get(z0diac.get_all_members(), id=reacter).roles)
+            try:
+                await z0diac.get_guild(381170494814289922).get_member(reacter).remove_roles(next(iter(setuser.intersection(setserver))))
+            except:
+                pass
+            if str(reaction) == '<:nationalist:448478321743888406>':
                 await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=427819576882102273))
-                await discord.utils.get(z0diac.get_all_members(), id=reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=427819576882102273) + ' role.')
-            elif str(reaction) == 448478811076427786:
+                await discord.utils.get(z0diac.get_all_members(), id=reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=427819576882102273).name + ' role.')
+            elif str(reaction) == '<:classical_liberal:448478811076427786>':
                 await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=381177029464293386))
-                await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=381177029464293386) + ' role.')
-            elif str(reaction) == 448478542444101643:
+                await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=381177029464293386).name + ' role.')
+            elif str(reaction) == '<:libertarian:448478542444101643>':
                 await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=381177107616759810))
-                await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=381177107616759810) + ' role.')
-            elif str(reaction) == 448478976252444673:
+                await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=381177107616759810).name + ' role.')
+            elif str(reaction) == '<:paternalist:448478976252444673>':
                 await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=416369684179320834))
-                await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=416369684179320834) + ' role.')
-            elif str(reaction) == 448478976252444673:
+                await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=416369684179320834).name + ' role.')
+            elif str(reaction) == '<:paleoconservative:448478006747332608>':
                 await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=424645022927945736))
-                await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922), id=424645022927945736) + ' role.')
-        elif 448486263608049666 == message:
-            await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_guild(381170494814289922).roles,id=409483695582478348))
-            await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the Apolitical role.')
+                await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=424645022927945736).name + ' role.')
+        elif 451558174965760000 == message:
+            setserver = set(umbrella_roles)
+            setuser = set(discord.utils.get(z0diac.get_all_members(), id=reacter).roles)
+            try:
+                await z0diac.get_guild(381170494814289922).get_member(reacter).remove_roles(next(iter(setuser.intersection(setserver))))
+            except:
+                pass
+            if str(reaction) == '<:apolitical:448485954462679060>':
+                await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_guild(381170494814289922).roles,id=409483695582478348))
+                await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the Apolitical role.')
         elif str(reaction) == '📌' or str(reaction) == '📍':
             with open("dictionary.json", 'r+') as f:
-                    if z0diac.get_channel(446400765775314947):
+                    if channel == 450415484832186369:
+                        if discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=448291958582935562) in z0diac.get_guild(381170494814289922).get_member(reacter).roles or reacter == 176160436331216896:
+                            with open("dictionary.json", 'r+') as f:
+                                x = await discord.utils.get(z0diac.get_all_channels(), id=channel).get_message(message)
+                                repkey = json.load(f)
+                                currentvalue_customer = repkey.get(str(x.author.id))
+                                dollar_amount = 10
+                                repkey[str(x.author.id)] = currentvalue_customer + dollar_amount
+                                f.seek(0)
+                                json.dump(repkey, f)
+                                f.truncate()
+                                weee = await discord.utils.get(z0diac.get_all_channels(), id=channel).get_message(message)
+                                www = weee.reactions[0].count
+                                if www <= 1:
+                                    x = await discord.utils.get(z0diac.get_all_channels(), id=channel).get_message(message)
+                                    embed = discord.Embed(title=("On: " + x.created_at.strftime("%Y-%m-%d %H:%M:%S") + " in #" + x.channel.name), color=x.author.color, description=x.content)
+                                    embed.set_author(name=x.author.name, icon_url=x.author.avatar_url)
+                                    msg = await z0diac.get_channel(450720964028923905).send(embed=embed)
+                    elif z0diac.get_channel(446400765775314947):
+                        print(channel)
                         weee = await discord.utils.get(z0diac.get_all_channels(), id=channel).get_message(message)
                         www = weee.reactions[0].count
                         if www <= 1:
@@ -663,6 +720,8 @@ async def on_raw_reaction_add(reaction, message, channel, reacter):
                             embed = discord.Embed(title=("On: " + x.created_at.strftime("%Y-%m-%d %H:%M:%S") + " in #" + x.channel.name), color=x.author.color, description=x.content)
                             embed.set_author(name=x.author.name,icon_url=x.author.avatar_url)
                             msg = await z0diac.get_channel(446400765775314947).send(embed=embed)
+
+
 
 
 @z0diac.command()
@@ -682,11 +741,11 @@ async def buy(ctx):
                             await ctx.channel.send(file=image)
                     else:
                         await ctx.channel.send('You need 2 EP to do that!')
-            elif ctx.message.content[5:17] == 'renamesaldol':
-                if ctx.message.author != discord.utils.get(ctx.guild.members, id=173451290268008448):
-                    saldol = ctx.guild.get_member(173451290268008448)
+            elif ctx.message.content[5:16] == 'renamebulba':
+                if ctx.message.author != discord.utils.get(ctx.guild.members, id=263014410015080459):
+                    saldol = ctx.guild.get_member(263014410015080459)
                     saldolname = saldol.display_name
-                    currentvalue_saldol = repkey.get(str(173451290268008448))
+                    currentvalue_saldol = repkey.get(str(263014410015080459))
                     dollar_amount = 5
                     if currentvalue_customer - dollar_amount >= 0:
                             repkey[str(ctx.message.author.id)] = currentvalue_customer - dollar_amount
@@ -694,12 +753,11 @@ async def buy(ctx):
                             json.dump(repkey, f)
                             f.truncate()
                     try:
-                        await saldol.edit(nick=ctx.message.content[18:])
+                        await saldol.edit(nick=ctx.message.content[17:])
                         await ctx.channel.trigger_typing()
                         time.sleep(3)
                         aftersaldol = saldol.display_name
                         await ctx.channel.send(saldolname + ', more like ' + aftersaldol + '!')
-                        repkey[str(173451290268008448)] = currentvalue_saldol + 2
                         f.seek(0)
                         json.dump(repkey, f)
                         f.truncate()
@@ -832,6 +890,8 @@ async def on_message(message):
         with open("dp.json", 'r+') as f:
             repkey = json.load(f)
             currentvalue_customer = repkey.get(str(message.author.id))
+            if currentvalue_customer == 50 or currentvalue_customer == 100 or currentvalue_customer == 25:
+                await message.author.send("You're down to " + str(currentvalue_customer) + " DP. Either conserve your remaining DP by being more thorough in your messages or trade your EP to another player for DP.")
             dollar_amount = 2
             if currentvalue_customer - dollar_amount >= 0:
                 repkey[str(message.author.id)] = currentvalue_customer - dollar_amount
@@ -842,6 +902,7 @@ async def on_message(message):
                 await message.delete()
                 await message.author.send('You ran out of Daily Points. Your Daily points will refill tomorrow, but you can earn more trading your EP for DP with other members. Do `/whatis earnEP` to find out more.')
     await z0diac.process_commands(message)
+
 
 @z0diac.command()
 async def refill(ctx):
@@ -856,4 +917,112 @@ async def refill(ctx):
                 json.dump(dpkey, f)
                 f.truncate()
         await ctx.message.channel.send("You have successfully refilled everyone's Daily Points")
+
+@z0diac.command()
+async def filibuster(ctx):
+    if len((discord.utils.get(ctx.guild.roles, id=450796233192243210)).members) == 0:
+        await ctx.message.author.add_roles(discord.utils.get(ctx.guild.roles, id=450796233192243210))
+        await ctx.guild.get_channel(414876520541192203).send(ctx.message.author.mention + ' will be speaking on the following topic: ' + ctx.message.content[12:] + "Once you are done speaking, do /conclude to exit the filibuster.")
+    else:
+        await ctx.message.author.send('Someone is currently filibustering. Please wait until they are done. If you believe this is an error, please DM Dakota.')
+
+@z0diac.command()
+async def conclude(ctx):
+    if discord.utils.get(ctx.guild.roles, id=450796233192243210) in ctx.message.author.roles:
+        await ctx.message.delete()
+        await ctx.message.author.remove_roles(discord.utils.get(ctx.guild.roles, id=450796233192243210))
+        msg = await z0diac.get_channel(414876520541192203).send(ctx.message.author.mention + ' has concluded their filibuster. Please react to this message with an applause emoji if you felt it was a solid contribution. They will recieve EP at no cost to you if you do choose to clap.')
+        await msg.add_reaction('👏')
+    else:
+        await ctx.message.author.send('You cannot do that.')
+
+@z0diac.command()
+async def trade(ctx):
+    await ctx.message.author.send("How much EP are you willing to spend? (Please only reply with a number)")
+    def check(m):
+        try:
+            ep_spend = int(m.content)
+            return type(ep_spend) == int
+        except:
+            ctx.message.author.send('That is not a number.')
+            return False
+    epspend = await z0diac.wait_for('message', check=check)
+    await ctx.message.author.send("How much DP do you expect in exchange? (Please only reply with a number)")
+    def check(m):
+        try:
+            dp_get = int(m.content)
+            return type(dp_get) == int
+        except:
+            ctx.message.author.send('That is not a number.')
+    dpget = await z0diac.wait_for('message', check=check)
+    with open("dictionary.json", 'r+') as f:
+        repkey = json.load(f)
+        currentvalue_customer = repkey.get(str(ctx.message.author.id))
+        dollar_amount = int(epspend.content)
+        if currentvalue_customer - dollar_amount >= 0:
+            embed = discord.Embed(title='Trade')
+            embed.set_author(name=epspend.author, icon_url=epspend.author.avatar_url)
+            embed.add_field(name="**Offer:**", value=(epspend.content + " EP"))
+            embed.add_field(name="**Wants:**", value=(dpget.content + " DP"))
+            message = await ctx.guild.get_channel(447424864907689984).send(embed=embed)
+            await message.add_reaction('✅')
+            def check(r):
+                return r.users[1] != z0diac.me and r.message is message
+            reactio = await z0diac.wait_for('add_reaction')
+            reactiouser = reactio.users[1]
+            await reactiouser.send("You have completed the trade.")
+            await epspend.author.send("You have completed the trade.")
+            await reactio.message.delete
+            currentvalue_seller = repkey.get(reactiouser.id)
+            repkey[str(reactiouser.id)] = currentvalue_seller + dollar_amount
+            repkey[str(epspend.author.id)] = currentvalue_customer - dollar_amount
+            f.seek(0)
+            json.dump(repkey, f)
+            f.truncate()
+            with open("dp.json", 'r+') as f:
+                repkey = json.load(f)
+                dollar_amount = int(dpget.content)
+                if currentvalue_seller - dollar_amount >= 0:
+                    currentvalue_seller = repkey.get(reactiouser.id)
+                    repkey[str(reactiouser.id)] = currentvalue_seller - dollar_amount
+                    repkey[str(epspend.author.id)] = currentvalue_customer + dollar_amount
+                    f.seek(0)
+                    json.dump(repkey, f)
+                    f.truncate()
+
+
+
+@z0diac.command()
+async def arrest(ctx):
+    await ctx.message.delete()
+    if ctx.message.author == ctx.guild.get_member(176160436331216896) or discord.utils.get(ctx.guild.roles,id=429705375848202240) in ctx.message.author.roles:
+        for x in ctx.message.mentions[0].roles:
+            await ctx.message.mentions[0].remove_roles(discord.utils.get(ctx.guild.roles,id=x.id))
+        await ctx.message.mentions[0].add_roles(discord.utils.get(ctx.guild.roles,id=400016622498349057))
+        await ctx.message.mentions[0].send('You have been jailed. You will be unable to speak until then. Please go to your respective wing court, and ping your lawyer by doing @Lawyer in that channel. If there is any questions, DM Dakota.')
+
+@z0diac.command()
+async def getunicode(ctx):
+    print(ctx.message.content)
+    message1 = await z0diac.get_channel(451557947194212362).get_message(451558090727358495)
+    await message1.add_reaction(z0diac.get_emoji(448479894725459968))
+    await message1.add_reaction(z0diac.get_emoji(448479501018464256))
+    await message1.add_reaction(z0diac.get_emoji(448479331220455434))
+    await message1.add_reaction(z0diac.get_emoji(448479686511689728))
+    await message1.add_reaction(z0diac.get_emoji(448636465417814026))
+    message2 = await z0diac.get_channel(451557947194212362).get_message(451558008787566593)
+    await message2.add_reaction(z0diac.get_emoji(448475108290592769))
+    await message2.add_reaction(z0diac.get_emoji(448477016430215169))
+    await message2.add_reaction(z0diac.get_emoji(448477539233431563))
+    await message2.add_reaction(z0diac.get_emoji(448477746138578944))
+    message3 = await z0diac.get_channel(451557947194212362).get_message(451558134784196611)
+    await message3.add_reaction(z0diac.get_emoji(448478006747332608))
+    await message3.add_reaction(z0diac.get_emoji(448478811076427786))
+    await message3.add_reaction(z0diac.get_emoji(448478542444101643))
+    await message3.add_reaction(z0diac.get_emoji(448478811076427786))
+    await message3.add_reaction(z0diac.get_emoji(448478976252444673))
+    await message3.add_reaction(z0diac.get_emoji(448478321743888406))
+    message4 = await z0diac.get_channel(451557947194212362).get_message(451558174965760000)
+    await message4.add_reaction(z0diac.get_emoji(448485954462679060))
+
 z0diac.run("MzgzMzg1MTk4NTM0MDY2MTg3.DeSjjg.UTV6BKxXzMrqIVmgMDahKsfZDzs")
