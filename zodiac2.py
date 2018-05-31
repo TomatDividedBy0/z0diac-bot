@@ -917,6 +917,7 @@ async def refill(ctx):
                 json.dump(dpkey, f)
                 f.truncate()
         await ctx.message.channel.send("You have successfully refilled everyone's Daily Points")
+<<<<<<< HEAD
 
 @z0diac.command()
 async def filibuster(ctx):
@@ -1025,4 +1026,5 @@ async def getunicode(ctx):
     message4 = await z0diac.get_channel(451557947194212362).get_message(451558174965760000)
     await message4.add_reaction(z0diac.get_emoji(448485954462679060))
 
-z0diac.run("MzgzMzg1MTk4NTM0MDY2MTg3.DeSjjg.UTV6BKxXzMrqIVmgMDahKsfZDzs")
+z0diac.run('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
+
