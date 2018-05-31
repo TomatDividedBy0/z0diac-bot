@@ -1005,5 +1005,5 @@ async def arrest(ctx):
         await ctx.message.mentions[0].send('You have been jailed. You will be unable to speak until then. Please go to your respective wing court, and ping your lawyer by doing @Lawyer in that channel. If there is any questions, DM Dakota.')
 
 
-z0diac.run("MzgzMzg1MTk4NTM0MDY2MTg3.DeSjjg.UTV6BKxXzMrqIVmgMDahKsfZDzs")
+z0diac.run("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
 
