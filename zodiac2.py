@@ -917,7 +917,7 @@ async def refill(ctx):
                 json.dump(dpkey, f)
                 f.truncate()
         await ctx.message.channel.send("You have successfully refilled everyone's Daily Points")
-<<<<<<< HEAD
+
 
 @z0diac.command()
 async def filibuster(ctx):
@@ -958,7 +958,7 @@ async def trade(ctx):
     dpget = await z0diac.wait_for('message', check=check)
     with open("dictionary.json", 'r+') as f:
         repkey = json.load(f)
-        currentvalue_customer = repkey.get(str(ctx.message.author.id))
+        currentvalue_customer = repkey.get(str(epspend.author.id))
         dollar_amount = int(epspend.content)
         if currentvalue_customer - dollar_amount >= 0:
             embed = discord.Embed(title='Trade')
@@ -967,14 +967,16 @@ async def trade(ctx):
             embed.add_field(name="**Wants:**", value=(dpget.content + " DP"))
             message = await ctx.guild.get_channel(447424864907689984).send(embed=embed)
             await message.add_reaction('✅')
-            def check(r):
-                return r.users[1] != z0diac.me and r.message is message
-            reactio = await z0diac.wait_for('add_reaction')
-            reactiouser = reactio.users[1]
+            def check(r,user):
+                return r.message.id == message.id and str(user) != 'zodiac-bot#0559'
+            reactio = await z0diac.wait_for('reaction_add',check=check)
+            print(reactio)
+            reactiouser = reactio[1]
             await reactiouser.send("You have completed the trade.")
             await epspend.author.send("You have completed the trade.")
-            await reactio.message.delete
-            currentvalue_seller = repkey.get(reactiouser.id)
+            await message.delete()
+            print(epspend.author.id)
+            currentvalue_seller = repkey.get(str(reactiouser.id))
             repkey[str(reactiouser.id)] = currentvalue_seller + dollar_amount
             repkey[str(epspend.author.id)] = currentvalue_customer - dollar_amount
             f.seek(0)
@@ -984,7 +986,7 @@ async def trade(ctx):
                 repkey = json.load(f)
                 dollar_amount = int(dpget.content)
                 if currentvalue_seller - dollar_amount >= 0:
-                    currentvalue_seller = repkey.get(reactiouser.id)
+                    currentvalue_seller = repkey.get(str(reactiouser.id))
                     repkey[str(reactiouser.id)] = currentvalue_seller - dollar_amount
                     repkey[str(epspend.author.id)] = currentvalue_customer + dollar_amount
                     f.seek(0)
@@ -1002,29 +1004,6 @@ async def arrest(ctx):
         await ctx.message.mentions[0].add_roles(discord.utils.get(ctx.guild.roles,id=400016622498349057))
         await ctx.message.mentions[0].send('You have been jailed. You will be unable to speak until then. Please go to your respective wing court, and ping your lawyer by doing @Lawyer in that channel. If there is any questions, DM Dakota.')
 
-@z0diac.command()
-async def getunicode(ctx):
-    print(ctx.message.content)
-    message1 = await z0diac.get_channel(451557947194212362).get_message(451558090727358495)
-    await message1.add_reaction(z0diac.get_emoji(448479894725459968))
-    await message1.add_reaction(z0diac.get_emoji(448479501018464256))
-    await message1.add_reaction(z0diac.get_emoji(448479331220455434))
-    await message1.add_reaction(z0diac.get_emoji(448479686511689728))
-    await message1.add_reaction(z0diac.get_emoji(448636465417814026))
-    message2 = await z0diac.get_channel(451557947194212362).get_message(451558008787566593)
-    await message2.add_reaction(z0diac.get_emoji(448475108290592769))
-    await message2.add_reaction(z0diac.get_emoji(448477016430215169))
-    await message2.add_reaction(z0diac.get_emoji(448477539233431563))
-    await message2.add_reaction(z0diac.get_emoji(448477746138578944))
-    message3 = await z0diac.get_channel(451557947194212362).get_message(451558134784196611)
-    await message3.add_reaction(z0diac.get_emoji(448478006747332608))
-    await message3.add_reaction(z0diac.get_emoji(448478811076427786))
-    await message3.add_reaction(z0diac.get_emoji(448478542444101643))
-    await message3.add_reaction(z0diac.get_emoji(448478811076427786))
-    await message3.add_reaction(z0diac.get_emoji(448478976252444673))
-    await message3.add_reaction(z0diac.get_emoji(448478321743888406))
-    message4 = await z0diac.get_channel(451557947194212362).get_message(451558174965760000)
-    await message4.add_reaction(z0diac.get_emoji(448485954462679060))
 
-z0diac.run('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
+z0diac.run("MzgzMzg1MTk4NTM0MDY2MTg3.DeSjjg.UTV6BKxXzMrqIVmgMDahKsfZDzs")
 
