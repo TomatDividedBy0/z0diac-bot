@@ -34,126 +34,126 @@ async def whatis(ctx):
     if ctx.channel != z0diac.get_channel(432574353822056448):
         if label == "Socialist" or label == "socialist" or label == "Socialists" or label == "socialists":
             embed = discord.Embed(color=discord.utils.get(ctx.guild.roles,id=443242847681118218).color)
-            embed.set_author(name="Socialist",icon_url=z0diac.get_emoji(448477016430215169).url)
+            embed.set_author(name="Socialist",icon_url=z0diac.get_emoji(454666012860743695).url)
             embed.add_field(name="**Type:**", value="Umbrella Role")
-            embed.add_field(name="**Wing:**", value="Left")
+            embed.add_field(name="**Wing:**", value="Socialist")
             embed.add_field(name="**Representative:**", value="sparkle#5001")
             embed.add_field(name="**Members:**", value=str(len(discord.utils.get(ctx.guild.roles,id=443242847681118218).members)))
             embed.add_field(name="**Description:**", value="Socialists believe in the public ownership of the means of production. They are commonly found on the far-left end of the compass, with varying degrees of authoritarianism/libertarianism.")
             message = await ctx.channel.send(embed=embed)
         elif label == "Classical Liberal" or label == "classical liberal" or label == "classical lib" or label == "Classical liberal" or label == "Classical Lib" or label == "Classical lib":
             embed = discord.Embed(color=discord.utils.get(ctx.guild.roles,id=381177029464293386).color)
-            embed.set_author(name="Classical Liberal",icon_url=z0diac.get_emoji(448478811076427786).url)
+            embed.set_author(name="Classical Liberal",icon_url=z0diac.get_emoji(454665209009668097).url)
             embed.add_field(name="**Type:**", value="Umbrella Role")
-            embed.add_field(name="**Wing:**", value="Right")
+            embed.add_field(name="**Wing:**", value="Liberal")
             embed.add_field(name="**Representative:**", value="Revolt#8500")
             embed.add_field(name="**Members:**", value=str(len(discord.utils.get(ctx.guild.roles,id=381177029464293386).members)))
             embed.add_field(name="**Description:**", value="Classical liberals adhere strongly to the rights of the individual, however, unlike libertarians, they are a lot more moderate on the free market. You'll usually find them straight down from center or near center.")
             message = await ctx.channel.send(embed=embed)
         elif label == "Nationalist" or label == "nationalist":
             embed = discord.Embed(color=discord.utils.get(ctx.guild.roles, id=427819576882102273).color)
-            embed.set_author(name="Nationalist", icon_url=z0diac.get_emoji(448478321743888406).url)
+            embed.set_author(name="Nationalist", icon_url=z0diac.get_emoji(454663855809757195).url)
             embed.add_field(name="**Type:**", value="Umbrella Role")
-            embed.add_field(name="**Wing:**", value="Right")
+            embed.add_field(name="**Wing:**", value="Liberal")
             embed.add_field(name="**Representative:**", value="Gunnz011#7212")
             embed.add_field(name="**Members:**", value=str(len(discord.utils.get(ctx.guild.roles, id=427819576882102273).members)))
             embed.add_field(name="**Description:**", value="Nationalists believe in putting their own country or group first above others. They are often protectionist, and come in many different variants from Civic Nationalists to Ethnonationalists.")
             message = await ctx.channel.send(embed=embed)
         elif label == "Right Libertarian" or label == "Libertarian" or label == "libertarian" or label == "right libertarian":
             embed = discord.Embed(color=discord.utils.get(ctx.guild.roles, id=381177107616759810).color)
-            embed.set_author(name="Libertarian", icon_url=z0diac.get_emoji(448478542444101643).url)
+            embed.set_author(name="Libertarian", icon_url=z0diac.get_emoji(454664092305588235).url)
             embed.add_field(name="**Type:**", value="Umbrella Role")
-            embed.add_field(name="**Wing:**", value="Right")
+            embed.add_field(name="**Wing:**", value="Liberal")
             embed.add_field(name="**Representative:**", value="BulbaBlin#7776")
             embed.add_field(name="**Members:**", value=str(len(discord.utils.get(ctx.guild.roles, id=381177107616759810).members)))
             embed.add_field(name="**Description:**", value="Libertarians tend to favor solutions that involve the free market and the individual over government intervention, detesting excess public spending and tax hikes. They are found everywhere on the bottom right of the compass.")
             message = await ctx.channel.send(embed=embed)
         elif label == "Paleoconservative" or label == "paleocon" or label == "paleoconservative" or label == "paleocon":
             embed = discord.Embed(color=discord.utils.get(ctx.guild.roles, id=424645022927945736).color)
-            embed.set_author(name="Paleoconservative", icon_url=z0diac.get_emoji(448478006747332608).url)
+            embed.set_author(name="Paleoconservative", icon_url=z0diac.get_emoji(454662578488999937).url)
             embed.add_field(name="**Type:**", value="Umbrella Role")
-            embed.add_field(name="**Wing:**", value="Right")
+            embed.add_field(name="**Wing:**", value="Reactionary")
             embed.add_field(name="**Representative:**", value="saldol-1104#5500")
             embed.add_field(name="**Members:**", value=str(len(discord.utils.get(ctx.guild.roles, id=424645022927945736).members)))
             embed.add_field(name="**Description:**", value="Paleoconservatives, also known as the Old Right, date back to the early 20th century in their beliefs. They place social tradition and economic nonintervention above all else, often being in the top right of the compass.")
             message = await ctx.channel.send(embed=embed)
         elif label == "LibtSoc" or label == "Libertarian Socialist" or label == "Libertarian Socialist" or label == "libertarian socialist":
             embed = discord.Embed(color=discord.utils.get(ctx.guild.roles, id=382557327892676619).color)
-            embed.set_author(name="Libertarian Socialist", icon_url=z0diac.get_emoji(448477746138578944).url)
+            embed.set_author(name="Libertarian Socialist", icon_url=z0diac.get_emoji(454663573386559499).url)
             embed.add_field(name="**Type:**", value="Umbrella Role")
-            embed.add_field(name="**Wing:**", value="Left")
+            embed.add_field(name="**Wing:**", value="Socialist")
             embed.add_field(name="**Representative:**", value="Blade Holdin#3961")
             embed.add_field(name="**Members:**", value=str(len(discord.utils.get(ctx.guild.roles, id=382557327892676619).members)))
             embed.add_field(name="**Description:**", value="Libertarian Socialists/AnComs are distrusting of authority, opposing both the state and corporate power as a means to liberate people.")
             message = await ctx.channel.send(embed=embed)
         elif label == "SocDem" or label == "socdem" or label == "social democrat" or label == "Social Democrat" or label == "Social democrat" or label == "Socdem":
             embed = discord.Embed(color=discord.utils.get(ctx.guild.roles, id=381178125591117827).color)
-            embed.set_author(name="Social Democrat", icon_url=z0diac.get_emoji(448477539233431563).url)
+            embed.set_author(name="Social Democrat", icon_url=z0diac.get_emoji(454666536142110721).url)
             embed.add_field(name="**Type:**", value="Umbrella Role")
-            embed.add_field(name="**Wing:**", value="Left")
+            embed.add_field(name="**Wing:**", value="Socialist")
             embed.add_field(name="**Representative:**", value="Bear+Maiden=Faire#3513")
             embed.add_field(name="**Members:**", value=str(len(discord.utils.get(ctx.guild.roles, id=381178125591117827).members)))
             embed.add_field(name="**Description:**", value="Social Democrats believe in using government as a tool to bring about social progress and change. They lean authoritative, intersect with social justice, and are typically found on the left.")
             message = await ctx.channel.send(embed=embed)
         elif label == "green" or label == "Green" or label == "left libertarian":
             embed = discord.Embed(color=discord.utils.get(ctx.guild.roles, id=420735827023495169).color)
-            embed.set_author(name="Green", icon_url=z0diac.get_emoji(448475108290592769).url)
+            embed.set_author(name="Green", icon_url=z0diac.get_emoji(454664511173951494).url)
             embed.add_field(name="**Type:**", value="Umbrella Role")
-            embed.add_field(name="**Wing:**", value="Left")
+            embed.add_field(name="**Wing:**", value="Socialist")
             embed.add_field(name="**Representative:**", value="The Firebird#7278")
             embed.add_field(name="**Members:**", value=str(len(discord.utils.get(ctx.guild.roles, id=420735827023495169).members)))
             embed.add_field(name="**Description:**", value="Greens tend to be less about the economic liberty and more about the social and infrastructure liberty, especially on envrionmental issues. The open source community and net neutrality opponents are good examples of Greens.")
             message = await ctx.channel.send(embed=embed)
         elif label == "Neoliberal" or label == "neolib" or label == "neoliberal":
             embed = discord.Embed(color=discord.utils.get(ctx.guild.roles, id=381177002033676298).color)
-            embed.set_author(name="Neoliberal", icon_url=z0diac.get_emoji(448479501018464256).url)
+            embed.set_author(name="Neoliberal", icon_url=z0diac.get_emoji(454666880771424258).url)
             embed.add_field(name="**Type:**", value="Umbrella Role")
-            embed.add_field(name="**Wing:**", value="Center")
+            embed.add_field(name="**Wing:**", value="Liberal")
             embed.add_field(name="**Representative:**", value="Webhobo#4708")
             embed.add_field(name="**Members:**", value=str(len(discord.utils.get(ctx.guild.roles, id=381177002033676298).members)))
             embed.add_field(name="**Description:**", value="Neoliberalism mixes aspects of progressivism and classical liberalism to create an ideology that's moderate, pragmatic, and often focused on values such as globalism, lower government spending, and deregulation.")
             message = await ctx.channel.send(embed=embed)
         elif label == "centrist" or label == "Centrist":
             embed = discord.Embed(color=discord.utils.get(ctx.guild.roles, id=381176934131957760).color)
-            embed.set_author(name="Centrist", icon_url=z0diac.get_emoji(448479331220455434).url)
+            embed.set_author(name="Centrist", icon_url=z0diac.get_emoji(454666611568410634).url)
             embed.add_field(name="**Type:**", value="Umbrella Role")
-            embed.add_field(name="**Wing:**", value="Center")
+            embed.add_field(name="**Wing:**", value="Liberal")
             embed.add_field(name="**Representative:**", value="BowlOfPepper#2090")
             embed.add_field(name="**Members:**", value=str(len(discord.utils.get(ctx.guild.roles, id=381176934131957760).members)))
             embed.add_field(name="**Description:**", value="Centrists don't particularly lean any noticeable amount on the left/right scale; their policies are often moderate, and they focus on compromise over ideological passion. They can be anywhere on the authoritarian/libertarian scale.")
             message = await ctx.channel.send(embed=embed)
         elif label == "neocon" or label == "neoconservative" or label == "Neoconservative" or label == "Neocon":
             embed = discord.Embed(color=discord.utils.get(ctx.guild.roles, id=381176967631863810).color)
-            embed.set_author(name="Neoconservative", icon_url=z0diac.get_emoji(448479686511689728).url)
+            embed.set_author(name="Neoconservative", icon_url=z0diac.get_emoji(454664747464392724).url)
             embed.add_field(name="**Type:**", value="Umbrella Role")
-            embed.add_field(name="**Wing:**", value="Center")
+            embed.add_field(name="**Wing:**", value="Liberal")
             embed.add_field(name="**Representative:**", value="Kaiser Wilhelm II#3444")
             embed.add_field(name="**Members:**", value=str(len(discord.utils.get(ctx.guild.roles, id=381176967631863810).members)))
             embed.add_field(name="**Description:**", value="Neoconservatism is a foreign policy theory that builds on the idea that it's a democratic country's duty to spread its values through foreign intervention. On most issues but foreign policy, they tend to be more moderate.")
             message = await ctx.channel.send(embed=embed)
         elif label == "Paternalist" or label  == "paternalist":
             embed = discord.Embed(color=discord.utils.get(ctx.guild.roles, id=416369684179320834).color)
-            embed.set_author(name="Paternalist", icon_url=z0diac.get_emoji(448478976252444673).url)
+            embed.set_author(name="Paternalist", icon_url=z0diac.get_emoji(454663251633111050).url)
             embed.add_field(name="**Type:**", value="Umbrella Role")
-            embed.add_field(name="**Wing:**", value="Right")
+            embed.add_field(name="**Wing:**", value="Reactionary")
             embed.add_field(name="**Representative:**", value="PaxBritannicus#3672")
             embed.add_field(name="**Members:**", value=str(len(discord.utils.get(ctx.guild.roles, id=416369684179320834).members)))
             embed.add_field(name="**Description:**", value="Paternalists believe in the state taking a parent role, being authoritative on social policy, but interventionist economically.")
             message = await ctx.channel.send(embed=embed)
         elif label == "Theologue" or label == "theologue":
             embed = discord.Embed(color=discord.utils.get(ctx.guild.roles, id=409124661272641536).color)
-            embed.set_author(name="Theologue", icon_url=z0diac.get_emoji(448479894725459968).url)
+            embed.set_author(name="Theologue", icon_url=z0diac.get_emoji(454667115601854474).url)
             embed.add_field(name="**Type:**", value="Umbrella Role")
-            embed.add_field(name="**Wing:**", value="Center")
+            embed.add_field(name="**Wing:**", value="Reactionary")
             embed.add_field(name="**Representative:**", value="JacolManuki#0703")
             embed.add_field(name="**Members:**", value=str(len(discord.utils.get(ctx.guild.roles, id=409124661272641536).members)))
             embed.add_field(name="**Description:**", value="Theologues are socially conservative, but vary widely on their economic policies. This includes Distributists, Christian Democrats, and right-theologues. Their main deciding factor in voting is their religion.")
             message = await ctx.channel.send(embed=embed)
         elif label == "Third Positioner" or label == "Third Positioner":
             embed = discord.Embed(color=discord.utils.get(ctx.guild.roles, id=448633320431943682).color)
-            embed.set_author(name="Third Positioner", icon_url=z0diac.get_emoji(448636465417814026).url)
+            embed.set_author(name="Third Positioner", icon_url=z0diac.get_emoji(454665463847321602).url)
             embed.add_field(name="**Type:**", value="Umbrella Role")
-            embed.add_field(name="**Wing:**", value="Center")
+            embed.add_field(name="**Wing:**", value="Reactionary")
             embed.add_field(name="**Representative:**", value="Militaristic Cezar#6488")
             embed.add_field(name="**Members:**", value=str(len(discord.utils.get(ctx.guild.roles, id=448633320431943682).members)))
             embed.add_field(name="**Description:**", value="Third Positioners believe that the control of economic and social issues is best kept in the hands of a few or singular entities; they are economically incredibly authoritarian and interventionist, but differ on conservative/progressive.")
@@ -600,6 +600,69 @@ async def whatis(ctx):
             embed.add_field(name="**Filibusters:**", value="filibusters  is the area for you to explain a complex topic without interruptions, and to get your point across or educate someone on a topic.")
             embed.add_field(name="**Podcast:**", value="The podcast, run by @ The Firebird, is a weekly stream that discusses various issues proposed by the PWH community.")
             message = await ctx.channel.send(embed=embed)
+        elif label == "B-1001":
+            embed = discord.Embed()
+            embed.set_author(name="B-0001: The Compact Council Act", icon_url='https://www.emojibase.com/resources/img/emojis/hangouts/1f4c3.png',url='https://docs.google.com/document/d/12UKv2uy8LG-AIGw6QhrZ8TzhGcrZg7CgjzECWy4ZcXs/edit')
+            embed.add_field(name="**Proposed By:**", value="Dakota")
+            embed.add_field(name="**Proposed On:**", value="3/31/2018")
+            embed.add_field(name="**Provisions:**", value="8")
+            embed.add_field(name="**Provisions Passed:**", value="8")
+            embed.add_field(name="**Summary:**", value="A bill designed with the sole purpose of shrinking down the council's size to improve efficiency.")
+            message = await ctx.channel.send(embed=embed)
+        elif label == "B-1002":
+            embed = discord.Embed()
+            embed.set_author(name="B-0002: The Dustpan Bill",icon_url='https://www.emojibase.com/resources/img/emojis/hangouts/1f4c3.png',url='https://docs.google.com/document/d/1lyhyEnln3etE4i6YfXXyFLV-Xc5TD-8VYkoxOHXGdqE/edit')
+            embed.add_field(name="**Proposed By:**", value="Dakota")
+            embed.add_field(name="**Proposed On:**", value="4/3/2018")
+            embed.add_field(name="**Provisions:**", value="7")
+            embed.add_field(name="**Provisions Passed:**", value="6")
+            embed.add_field(name="**Summary:**", value="An omnibus bill intended to clean up the side-effects of B-0001.")
+            message = await ctx.channel.send(embed=embed)
+        elif label == "B-1003":
+            embed = discord.Embed()
+            embed.set_author(name="B-0003: The Quality Discussion Act",icon_url='https://www.emojibase.com/resources/img/emojis/hangouts/1f4c3.png',url='https://docs.google.com/document/d/1a81hF-H9TzpE5KnTVtgH5CTfdtj7NVER0g0hznxL3Co/edit')
+            embed.add_field(name="**Proposed By:**", value="Dakota")
+            embed.add_field(name="**Proposed On:**", value="4/25/2018")
+            embed.add_field(name="**Provisions:**", value="7")
+            embed.add_field(name="**Provisions Passed:**", value="0")
+            embed.add_field(name="**Summary:**", value="A bill designed to return quality back to discussion. Was shelved indefinitely, but served as basis for the Economy Update.")
+            message = await ctx.channel.send(embed=embed)
+        elif label == "E-1488":
+            embed = discord.Embed()
+            embed.set_author(name="E-1488: Nazi Defense Motion",icon_url='http://www.emoji.co.uk/files/phantom-open-emojis/objects-phantom/12926-lower-left-fountain-pen.png',url='https://docs.google.com/document/d/1Q-_oJPH11DXCrnEElr5VUCq4snonOIFcADyRjz1pCYY/edit')
+            embed.add_field(name="**Issued By:**", value="Dakota")
+            embed.add_field(name="**Proposed On:**", value="4/2/2018")
+            embed.add_field(name="**Status:**", value="Overturned")
+            embed.add_field(name="**Summary:**", value="An executive order suspending due process for certain individuals following a Nazi raid.")
+            message = await ctx.channel.send(embed=embed)
+        elif label == "E-2000":
+            embed = discord.Embed()
+            embed.set_author(name="E-2000: The Economy Update",icon_url='http://www.emoji.co.uk/files/phantom-open-emojis/objects-phantom/12926-lower-left-fountain-pen.png',url='https://docs.google.com/document/d/1znVidkfu08pye-n6ZMiCiKiuo-DAGqmnBEt5u4j7r5I/edit?usp=sharing')
+            embed.add_field(name="**Issued By:**", value="Dakota")
+            embed.add_field(name="**Proposed On:**", value="5/29/2018")
+            embed.add_field(name="**Status:**", value="Active")
+            embed.add_field(name="**Summary:**", value="An executive order restoring discussion quality through a government overhaul and introduction of an economy.")
+            message = await ctx.channel.send(embed=embed)
+        elif label == "J-1001":
+            embed = discord.Embed()
+            embed.set_author(name="J-1001: Gunnz101 v. PaxBritannicus",icon_url='http://icons.iconarchive.com/icons/iconleak/or/256/auction-hammer-icon.png',url='https://docs.google.com/document/d/1Zctkzht7niHCJmqGkktIXoA3v8HQj4Dq1wiPkHcQM6o/edit')
+            embed.add_field(name="**Plantiff:**", value="Gunnz101")
+            embed.add_field(name="**Defendant:**", value="PaxBritannicus")
+            embed.add_field(name="**Prosecutor:**", value="Auren")
+            embed.add_field(name="**Defense:**", value="Cezar")
+            embed.add_field(name="**Trial Date:**", value="3/29/2018")
+            embed.add_field(name="**Verdict:**", value="Pax was found guilty of violating Rules 1 and 7.")
+            message = await ctx.channel.send(embed=embed)
+        elif label == "J-1002":
+            embed = discord.Embed()
+            embed.set_author(name="J-1002: sparkle v. Cezar and Oxenfree", icon_url='http://icons.iconarchive.com/icons/iconleak/or/256/auction-hammer-icon.png', url='https://docs.google.com/document/d/1VCLOyWswz8XYm5I0slE0Aos1nP2ZHVSrEdVsDpHweBE/edit')
+            embed.add_field(name="**Plantiff:**", value="Gunnz101")
+            embed.add_field(name="**Defendant:**", value="PaxBritannicus")
+            embed.add_field(name="**Prosecutor:**", value="Auren")
+            embed.add_field(name="**Defense:**", value="Cezar")
+            embed.add_field(name="**Trial Date:**", value="4/2/2018")
+            embed.add_field(name="**Verdict:**", value="Cezar was found innocent, Oxen decided to plead guilty.")
+            message = await ctx.channel.send(embed=embed)
         else:
             word = ctx.message.content[7:]
             meaningobject = dictionary.meaning(word)
@@ -624,16 +687,16 @@ async def on_raw_reaction_add(reaction, message, channel, reacter):
                 await z0diac.get_guild(381170494814289922).get_member(reacter).remove_roles(next(iter(setuser.intersection(setserver))))
             except:
                 pass
-            if str(reaction) == '<:socialist:448477016430215169>':
+            if str(reaction) == '<:socialist:454666012860743695>':
                 await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=443242847681118218))
                 await discord.utils.get(z0diac.get_all_members(), id=reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=443242847681118218).name + ' role.')
-            elif str(reaction) == '<:social_democrat:448477539233431563>':
+            elif str(reaction) == '<:social_democrat:454666536142110721>':
                 await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=381178125591117827))
                 await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=381178125591117827).name + ' role.')
-            elif str(reaction) == '<:libertarian_socialist:448477746138578944>':
+            elif str(reaction) == '<:libertarian_socialist:454663573386559499>':
                 await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=382557327892676619))
                 await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=382557327892676619).name + ' role.')
-            elif str(reaction) == '<:green:448475108290592769>':
+            elif str(reaction) == '<:green:454664511173951494>':
                 await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=420735827023495169))
                 await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=420735827023495169).name + ' role.')
         elif 451558090727358495 == message:
@@ -643,22 +706,22 @@ async def on_raw_reaction_add(reaction, message, channel, reacter):
                 await z0diac.get_guild(381170494814289922).get_member(reacter).remove_roles(next(iter(setuser.intersection(setserver))))
             except:
                 pass
-            if str(reaction) == '<:centrist:448479331220455434>':
+            if str(reaction) == '<:centrist:454666611568410634>':
                 combinedset = [umbrella_roles + discord.utils.get(z0diac.get_all_members(), id=reacter).roles]
                 await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=381176934131957760))
                 await discord.utils.get(z0diac.get_all_members(), id=reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=381176934131957760).name + ' role.')
-            elif str(reaction) == '<:neoliberal:448479501018464256>':
+            elif str(reaction) == '<:neoliberal:454666880771424258>':
                 await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=381177002033676298))
                 await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=381177002033676298).name + ' role.')
-            elif str(reaction) == '<:neoconservative:448479686511689728>':
+            elif str(reaction) == '<:neoconservative:454664747464392724>':
                 await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=381176967631863810))
                 await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=381176967631863810).name + ' role.')
-            elif str(reaction) == '<:theologue:448479894725459968>':
-                await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(roles, id=409124661272641536)
-                await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=409124661272641536).name + ' role.')
-            elif str(reaction) == '<:third_positioner:448636465417814026>':
-                await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=448633320431943682))
-                await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=448633320431943682).name + ' role.')
+            elif str(reaction) == '<:classical_liberal:454665209009668097>':
+                await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=381177029464293386))
+                await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=381177029464293386).name + ' role.')
+            elif str(reaction) == '<:libertarian:454664092305588235>':
+                await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=381177107616759810))
+                await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=381177107616759810).name + ' role.')
         elif 451558134784196611 == message:
             setserver = set(umbrella_roles)
             setuser = set(discord.utils.get(z0diac.get_all_members(), id=reacter).roles)
@@ -666,21 +729,21 @@ async def on_raw_reaction_add(reaction, message, channel, reacter):
                 await z0diac.get_guild(381170494814289922).get_member(reacter).remove_roles(next(iter(setuser.intersection(setserver))))
             except:
                 pass
-            if str(reaction) == '<:nationalist:448478321743888406>':
+            if str(reaction) == '<:nationalist:454663855809757195>':
                 await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=427819576882102273))
                 await discord.utils.get(z0diac.get_all_members(), id=reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=427819576882102273).name + ' role.')
-            elif str(reaction) == '<:classical_liberal:448478811076427786>':
-                await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=381177029464293386))
-                await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=381177029464293386).name + ' role.')
-            elif str(reaction) == '<:libertarian:448478542444101643>':
-                await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=381177107616759810))
-                await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=381177107616759810).name + ' role.')
-            elif str(reaction) == '<:paternalist:448478976252444673>':
+            elif str(reaction) == '<:paternalist:454663251633111050>':
                 await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=416369684179320834))
                 await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=416369684179320834).name + ' role.')
-            elif str(reaction) == '<:paleoconservative:448478006747332608>':
+            elif str(reaction) == '<:paleoconservative:454662578488999937>':
                 await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=424645022927945736))
                 await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=424645022927945736).name + ' role.')
+            elif str(reaction) == '<:theologue:454667115601854474>':
+                await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(roles, id=409124661272641536)
+                await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=409124661272641536).name + ' role.')
+            elif str(reaction) == '<:third_positioner:454665463847321602>':
+                await z0diac.get_guild(381170494814289922).get_member(reacter).add_roles(discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=448633320431943682))
+                await z0diac.get_guild(381170494814289922).get_member(reacter).send('You have been given the ' + discord.utils.get(z0diac.get_guild(381170494814289922).roles, id=448633320431943682).name + ' role.')
         elif 451558174965760000 == message:
             setserver = set(umbrella_roles)
             setuser = set(discord.utils.get(z0diac.get_all_members(), id=reacter).roles)
@@ -729,9 +792,9 @@ async def buy(ctx):
     with open("dictionary.json", 'r+') as f:
         repkey = json.load(f)
         currentvalue_customer = repkey.get(str(ctx.message.author.id))
-        if ctx.channel != z0diac.get_channel(432574353822056448):
+        if ctx.channel != z0diac.get_channel(450415484832186369):
             if ctx.message.content[5:] == 'bigdab' or ctx.message.content[:5] == 'dab':
-                    dollar_amount = 2
+                    dollar_amount = 5
                     if currentvalue_customer - dollar_amount >= 0:
                         repkey[str(ctx.message.author.id)] = currentvalue_customer - dollar_amount
                         f.seek(0)
@@ -741,12 +804,23 @@ async def buy(ctx):
                             await ctx.channel.send(file=image)
                     else:
                         await ctx.channel.send('You need 2 EP to do that!')
+            elif ctx.message.content[5:13] == 'dmsaldol':
+                    dollar_amount = 10
+                    if currentvalue_customer - dollar_amount >= 0:
+                        repkey[str(ctx.message.author.id)] = currentvalue_customer - dollar_amount
+                        f.seek(0)
+                        json.dump(repkey, f)
+                        f.truncate()
+                        await ctx.guild.get_member(173451290268008448).send('An anonymous user wants to tell you: ' + ctx.message.content[14:])
+                        await ctx.message.delete()
+                        await ctx.message.author.send('Your DM was sent.')
+                    else:
+                        await ctx.channel.send('You need 2 EP to do that!')
             elif ctx.message.content[5:16] == 'renamebulba':
                 if ctx.message.author != discord.utils.get(ctx.guild.members, id=263014410015080459):
                     saldol = ctx.guild.get_member(263014410015080459)
                     saldolname = saldol.display_name
-                    currentvalue_saldol = repkey.get(str(263014410015080459))
-                    dollar_amount = 5
+                    dollar_amount = 10
                     if currentvalue_customer - dollar_amount >= 0:
                             repkey[str(ctx.message.author.id)] = currentvalue_customer - dollar_amount
                             f.seek(0)
@@ -800,7 +874,7 @@ async def buy(ctx):
                     f.seek(0)
                     json.dump(repkey, f)
                     f.truncate()
-                embed = discord.Embed(title=(ctx.message.author.display_name + " (" + ctx.message.created_at.strftime("%Y-%m-%d %H:%M:%S") + ")"), color=ctx.message.author.color, description=ctx.message.content[12:])
+                embed = discord.Embed(title=(ctx.message.author.display_name + " (" + ctx.message.created_at.strftime("%Y-%m-%d %H:%M:%S") + ")"), color=ctx.message.author.color, description=ctx.message.content[11:])
                 embed.set_thumbnail(url=ctx.message.author.avatar_url)
                 message = await z0diac.get_channel(448905798509264906).send(embed=embed)
                 await message.add_reaction('✅')
@@ -890,7 +964,7 @@ async def on_message(message):
         with open("dp.json", 'r+') as f:
             repkey = json.load(f)
             currentvalue_customer = repkey.get(str(message.author.id))
-            if currentvalue_customer == 50 or currentvalue_customer == 100 or currentvalue_customer == 25:
+            if currentvalue_customer == 50 or currentvalue_customer == 25:
                 await message.author.send("You're down to " + str(currentvalue_customer) + " DP. Either conserve your remaining DP by being more thorough in your messages or trade your EP to another player for DP.")
             dollar_amount = 2
             if currentvalue_customer - dollar_amount >= 0:
@@ -912,7 +986,7 @@ async def refill(ctx):
             keys = list(dpkey.keys())
             for x in keys:
                 print(x)
-                dpkey[x] = 144
+                dpkey[x] = 100
                 f.seek(0)
                 json.dump(dpkey, f)
                 f.truncate()
@@ -924,6 +998,8 @@ async def filibuster(ctx):
     if len((discord.utils.get(ctx.guild.roles, id=450796233192243210)).members) == 0:
         await ctx.message.author.add_roles(discord.utils.get(ctx.guild.roles, id=450796233192243210))
         await ctx.guild.get_channel(414876520541192203).send(ctx.message.author.mention + ' will be speaking on the following topic: ' + ctx.message.content[12:] + "Once you are done speaking, do /conclude to exit the filibuster.")
+        await ctx.guild.get_channel(448904930787459080).set_permissions(ctx.guild.default_role, send_messages=None)
+        await ctx.guild.get_channel(448904930787459080).send('A filibuster event is beginning, join us! To learn more about events, do `/whatis channels`!')
     else:
         await ctx.message.author.send('Someone is currently filibustering. Please wait until they are done. If you believe this is an error, please DM Dakota.')
 
@@ -934,6 +1010,8 @@ async def conclude(ctx):
         await ctx.message.author.remove_roles(discord.utils.get(ctx.guild.roles, id=450796233192243210))
         msg = await z0diac.get_channel(414876520541192203).send(ctx.message.author.mention + ' has concluded their filibuster. Please react to this message with an applause emoji if you felt it was a solid contribution. They will recieve EP at no cost to you if you do choose to clap.')
         await msg.add_reaction('👏')
+        await ctx.guild.get_channel(448904930787459080).set_permissions(ctx.guild.default_role, send_messages=False)
+        await ctx.guild.get_channel(448904930787459080).send('Thank you for joining us during the filibuster! Please tune in next time! To learn more about events, do `/whatis channels`!')
     else:
         await ctx.message.author.send('You cannot do that.')
 
@@ -966,32 +1044,37 @@ async def trade(ctx):
             embed.add_field(name="**Offer:**", value=(epspend.content + " EP"))
             embed.add_field(name="**Wants:**", value=(dpget.content + " DP"))
             message = await ctx.guild.get_channel(447424864907689984).send(embed=embed)
-            await message.add_reaction('✅')
-            def check(r,user):
-                return r.message.id == message.id and str(user) != 'zodiac-bot#0559'
-            reactio = await z0diac.wait_for('reaction_add',check=check)
-            print(reactio)
-            reactiouser = reactio[1]
-            await reactiouser.send("You have completed the trade.")
-            await epspend.author.send("You have completed the trade.")
-            await message.delete()
-            print(epspend.author.id)
-            currentvalue_seller = repkey.get(str(reactiouser.id))
-            repkey[str(reactiouser.id)] = currentvalue_seller + dollar_amount
-            repkey[str(epspend.author.id)] = currentvalue_customer - dollar_amount
-            f.seek(0)
-            json.dump(repkey, f)
-            f.truncate()
             with open("dp.json", 'r+') as f:
                 repkey = json.load(f)
+                await message.add_reaction('✅')
                 dollar_amount = int(dpget.content)
-                if currentvalue_seller - dollar_amount >= 0:
-                    currentvalue_seller = repkey.get(str(reactiouser.id))
-                    repkey[str(reactiouser.id)] = currentvalue_seller - dollar_amount
-                    repkey[str(epspend.author.id)] = currentvalue_customer + dollar_amount
-                    f.seek(0)
-                    json.dump(repkey, f)
-                    f.truncate()
+                def check(r,user):
+                    print(user)
+                    print(user.id)
+                    return r.message.id == message.id and str(user) != 'zodiac-bot#0559' and (repkey.get(str(user.id)) - dollar_amount) >= 0
+                reactio = await z0diac.wait_for('reaction_add',check=check)
+                print(reactio)
+                reactiouser = reactio[1]
+                await reactiouser.send("You have completed the trade.")
+                await epspend.author.send("You have completed the trade.")
+                await message.delete()
+                print(epspend.author.id)
+                currentvalue_seller = repkey.get(str(reactiouser.id))
+                repkey[str(reactiouser.id)] = currentvalue_seller + dollar_amount
+                repkey[str(epspend.author.id)] = currentvalue_customer - dollar_amount
+                f.seek(0)
+                json.dump(repkey, f)
+                f.truncate()
+                with open("dp.json", 'r+') as f:
+                    repkey = json.load(f)
+                    dollar_amount = int(dpget.content)
+                    if currentvalue_seller - dollar_amount >= 0:
+                        currentvalue_seller = repkey.get(str(reactiouser.id))
+                        repkey[str(reactiouser.id)] = currentvalue_seller - dollar_amount
+                        repkey[str(epspend.author.id)] = currentvalue_customer + dollar_amount
+                        f.seek(0)
+                        json.dump(repkey, f)
+                        f.truncate()
 
 
 
@@ -1004,6 +1087,21 @@ async def arrest(ctx):
         await ctx.message.mentions[0].add_roles(discord.utils.get(ctx.guild.roles,id=400016622498349057))
         await ctx.message.mentions[0].send('You have been jailed. You will be unable to speak until then. Please go to your respective wing court, and ping your lawyer by doing @Lawyer in that channel. If there is any questions, DM Dakota.')
 
+@z0diac.command()
+async def peanut(ctx):
+    if ctx.message.author.id == 176160436331216896:
+        if ctx.message.content[8:] == 'close':
+           await ctx.guild.get_channel(448904930787459080).set_permissions(ctx.guild.default_role, send_messages=False)
+           await ctx.guild.get_channel(448904930787459080).send('Thank you for joining us during the event! Please tune in next time! To learn more about events, do `/whatis event`!')
+           await ctx.message.delete
+        if ctx.message.content[8:] == 'open':
+           await ctx.guild.get_channel(448904930787459080).set_permissions(ctx.guild.default_role, send_messages=None)
+           await ctx.guild.get_channel(448904930787459080).send('An event is beginning, join us! To learn more about events, do `/whatis event`!')
+           await ctx.message.delete
 
-z0diac.run("MzgzMzg1MTk4NTM0MDY2MTg3.DeSjjg.UTV6BKxXzMrqIVmgMDahKsfZDzs")
+
+
+
+
+z0diac.run("MzgzMzg1MTk4NTM0MDY2MTg3.Df75Pg.aDpmWPPsoXJORinQlcWHoCdJQdc")
 

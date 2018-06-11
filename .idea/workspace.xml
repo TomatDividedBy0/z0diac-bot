@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cc72e11e-866d-47a2-bf3e-fc6eaca3d558" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dictionary.json" afterPath="$PROJECT_DIR$/dictionary.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dp.json" afterPath="$PROJECT_DIR$/dp.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zodiac2.py" afterPath="$PROJECT_DIR$/zodiac2.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,24 +15,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="dictionary.json" pinned="false" current-in-tab="false">
+      <file leaf-file-name="dictionary.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dictionary.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="893" lean-forward="false" selection-start-line="0" selection-start-column="893" selection-end-line="0" selection-end-column="893" />
+              <caret line="0" column="3165" lean-forward="false" selection-start-line="0" selection-start-column="3165" selection-end-line="0" selection-end-column="3165" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="zodiac2.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dp.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dp.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="3319" lean-forward="false" selection-start-line="0" selection-start-column="3319" selection-end-line="0" selection-end-column="3319" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="zodiac2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/zodiac2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="427" column="43" lean-forward="true" selection-start-line="427" selection-start-column="43" selection-end-line="427" selection-end-column="43" />
+            <state relative-caret-position="-800">
+              <caret line="1012" column="116" lean-forward="true" selection-start-line="1012" selection-start-column="116" selection-end-line="1012" selection-end-column="116" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
-                <element signature="e#591#39779#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -40,7 +50,7 @@
       <file leaf-file-name="admincommands.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admincommands.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
+            <state relative-caret-position="374">
               <caret line="27" column="46" lean-forward="false" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="178" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
@@ -63,6 +73,9 @@
       <find>false</find>
       <find>1</find>
       <find>reaction2</find>
+      <find>channels</find>
+      <find>298542162331828229</find>
+      <find>538</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -81,17 +94,18 @@
         <option value="$PROJECT_DIR$/backup.py" />
         <option value="$PROJECT_DIR$/backupdictionary.json" />
         <option value="$PROJECT_DIR$/whoreppedwho.json" />
-        <option value="$PROJECT_DIR$/dictionary.json" />
         <option value="$PROJECT_DIR$/2animals1tomat0.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/admincommands.py" />
         <option value="$PROJECT_DIR$/zodiac2.py" />
+        <option value="$PROJECT_DIR$/dp.json" />
+        <option value="$PROJECT_DIR$/dictionary.json" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="351" />
-    <option name="y" value="-8" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="911" />
+    <option name="y" value="17" />
     <option name="width" value="974" />
     <option name="height" value="671" />
   </component>
@@ -129,7 +143,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -141,7 +155,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -228,20 +242,20 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="911" y="17" width="974" height="671" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16041666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10542797" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cargo" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Cargo" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25846702" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36815417" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3995943" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -262,7 +276,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/main.py" />
     <entry file="file://$PROJECT_DIR$/dictionary.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -388,7 +401,7 @@
     <entry file="file://$PROJECT_DIR$/main.py" />
     <entry file="file://$PROJECT_DIR$/admincommands.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
+        <state relative-caret-position="374">
           <caret line="27" column="46" lean-forward="false" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="178" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
@@ -400,26 +413,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="512" column="0" lean-forward="false" selection-start-line="512" selection-start-column="0" selection-end-line="512" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dictionary.json">
+    <entry file="file://$PROJECT_DIR$/dp.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="893" lean-forward="false" selection-start-line="0" selection-start-column="893" selection-end-line="0" selection-end-column="893" />
+          <caret line="0" column="3319" lean-forward="false" selection-start-line="0" selection-start-column="3319" selection-end-line="0" selection-end-column="3319" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/zodiac2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="427" column="43" lean-forward="true" selection-start-line="427" selection-start-column="43" selection-end-line="427" selection-end-column="43" />
+        <state relative-caret-position="-800">
+          <caret line="1012" column="116" lean-forward="true" selection-start-line="1012" selection-start-column="116" selection-end-line="1012" selection-end-column="116" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <element signature="e#591#39779#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dictionary.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="3165" lean-forward="false" selection-start-line="0" selection-start-column="3165" selection-end-line="0" selection-end-column="3165" />
+          <folding />
         </state>
       </provider>
     </entry>
